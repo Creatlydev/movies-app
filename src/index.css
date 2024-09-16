@@ -1,0 +1,59 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: inherit;
+  font: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+input, 
+button {
+  border: none;
+  background-color: transparent;
+  display: inline-block;
+}
+
+button {
+  cursor: pointer;
+  line-height: 1;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('./assets/fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary-hue: 205;
+  --primary-saturation: 89%;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: hsl(var(--primary-hue), var(--primary-saturation), 98%);
+  font-weight: 300;
+}
