@@ -11,7 +11,7 @@
   opacity: 0;
   visibility: hidden;
   background-color: white;
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0s .3s;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out, visibility 0s .2s;
   border-radius: .5rem;
   box-shadow: var(--shadow-md);
 
@@ -47,7 +47,7 @@
 }
 
 .MenuContent.is-open {
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0s;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out, visibility 0s;
   opacity: 1;
   visibility: visible;
 

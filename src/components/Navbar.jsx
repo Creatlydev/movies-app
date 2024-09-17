@@ -3,6 +3,7 @@ import NavigationMenuItem from './NavigationMenu/NavigationMenuItem'
 import NavigationMenuTrigger from './NavigationMenu/NavigationMenuTrigger'
 
 import './Navbar.css'
+import { Link } from './Link'
 
 export default function Navbar () {
   return (
@@ -14,16 +15,16 @@ export default function Navbar () {
         <NavigationMenuDropdown>
           <ul className='NavbarMenu' role='menu'>
             <li>
-              <a className='NavbarMenu-item' href='/movie' role='menuitem'>Popular</a>
+              <Link className='NavbarMenu-item' to='/movie' role='menuitem'>Popular</Link>
             </li>
             <li>
-              <a className='NavbarMenu-item' href='/movie/now-playing' role='menuitem'>En Cartelera</a>
+              <Link className='NavbarMenu-item' to='/movie/now-playing' role='menuitem'>En Cartelera</Link>
             </li>
             <li>
-              <a className='NavbarMenu-item' href='/movie/upcoming' role='menuitem'>Proximamente</a>
+              <Link className='NavbarMenu-item' to='/movie/upcoming' role='menuitem'>Proximamente</Link>
             </li>
             <li>
-              <a className='NavbarMenu-item' href='/movie/top-rated' role='menuitem'>Mejor puntuadas</a>
+              <Link className='NavbarMenu-item' to='/movie/top-rated' role='menuitem'>Mejor puntuadas</Link>
             </li>
           </ul>
         </NavigationMenuDropdown>
@@ -31,21 +32,21 @@ export default function Navbar () {
 
       <NavigationMenuItem>
         <NavigationMenuTrigger>
-          Popular
+          Series
         </NavigationMenuTrigger>
         <NavigationMenuDropdown>
           <ul className='NavbarMenu' role='menu'>
             <li>
-              <a className='NavbarMenu-item' href='/tv' role='menuitem'>Popular</a>
+              <Link className='NavbarMenu-item' to='/tv' role='menuitem'>Popular</Link>
             </li>
             <li>
-              <a className='NavbarMenu-item' href='/tv/...' role='menuitem'>Se emiten hoy</a>
+              <Link className='NavbarMenu-item' to='/tv/...' role='menuitem'>Se emiten hoy</Link>
             </li>
             <li>
-              <a className='NavbarMenu-item' href='/tv/...' role='menuitem'>En television</a>
+              <Link className='NavbarMenu-item' to='/tv/...' role='menuitem'>En television</Link>
             </li>
             <li>
-              <a className='NavbarMenu-item' href='/tv/top-rated' role='menuitem'>Mejor valoradas</a>
+              <Link className='NavbarMenu-item' to='/tv/top-rated' role='menuitem'>Mejor valoradas</Link>
             </li>
           </ul>
         </NavigationMenuDropdown>
@@ -58,7 +59,7 @@ export default function Navbar () {
         <NavigationMenuDropdown>
           <ul className='NavbarMenu' role='menu'>
             <li>
-              <a className='NavbarMenu-item' href='/person' role='menuitem'>Popular</a>
+              <Link className='NavbarMenu-item' to='/person' role='menuitem'>Popular</Link>
             </li>
           </ul>
         </NavigationMenuDropdown>
