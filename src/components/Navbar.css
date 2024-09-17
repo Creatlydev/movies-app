@@ -1,0 +1,29 @@
+/* NAVBAR */
+.Navbar {
+  margin-right: auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.NavbarMenu {
+  color: #333;
+  width: max-content;
+  padding-block: .5rem;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.NavbarMenu-item {
+  padding: .5rem 1.5rem;
+  text-wrap: nowrap;
+  padding-right: 4rem;
+  width: 100%;
+  border-radius: .25rem;
+
+  &:hover {
+    background-color: hsl(var(--primary-hue), var(--primary-saturation), 98%);
+  }
+}

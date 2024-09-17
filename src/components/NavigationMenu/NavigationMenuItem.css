@@ -1,0 +1,80 @@
+.MenuItem {
+  position: relative;
+  width: fit-content;
+}
+
+.MenuContent {
+  z-index: var(--z-10);
+  position: absolute;
+  font-weight: 400;
+  top: calc(100% + 1.5rem);
+  opacity: 0;
+  visibility: hidden;
+  background-color: white;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0s .3s;
+  border-radius: .5rem;
+  box-shadow: var(--shadow-md);
+
+  &.center {
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+
+    .MenuContent-arrow {
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    }
+  }
+
+  &.left {
+    left: 0;
+    transform: translateY(15px);
+
+    .MenuContent-arrow {
+      left: 22px;
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  &.right {
+    right: 0;
+    transform: translateY(15px);
+
+    .MenuContent-arrow {
+      right: 22px;
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+}
+
+.MenuContent.is-open {
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0s;
+  opacity: 1;
+  visibility: visible;
+
+  &.center {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  &.left,
+  &.right {
+    transform: translateY(0);
+  }
+}
+
+.MenuContent-background {
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: transparent;
+}
+
+.MenuContent-arrow {
+  position: absolute;
+  top: 0;
+  border: 10px solid white;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-start-start-radius: .25rem;
+}

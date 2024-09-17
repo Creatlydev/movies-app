@@ -1,0 +1,16 @@
+.HeaderMain {
+  color: #fff;
+  background-color: hsl(var(--primary-hue), var(--primary-saturation), 40%);
+}
+
+.HeaderMain > .container {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  .Logo {
+    width: 200px;
+  }
+}

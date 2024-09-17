@@ -1,10 +1,11 @@
 // import { useState } from 'react'
 
-function App() {
+import Header from './components/Header'
 
+function App () {
   return (
     <>
-      <h1>Movies DB 🙌</h1>
+      <Header />
     </>
   )
 }

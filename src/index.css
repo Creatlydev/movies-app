@@ -18,7 +18,7 @@ a {
   text-decoration: none;
 }
 
-input, 
+input,
 button {
   border: none;
   background-color: transparent;
@@ -50,10 +50,22 @@ img {
 
   --primary-hue: 205;
   --primary-saturation: 89%;
+  --primary: 205, 89%, 53%;
+
+  --z-10: 10;
+
+  --shadow-md: 0 0 24px 4px hsla(var(--primary-hue), var(--primary-saturation), 10%, .05);
 }
 
 body {
   font-family: 'Rubik', sans-serif;
   background-color: hsl(var(--primary-hue), var(--primary-saturation), 98%);
   font-weight: 300;
+}
+
+
+.container {
+  width: min(100%, 1400px);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
 }
