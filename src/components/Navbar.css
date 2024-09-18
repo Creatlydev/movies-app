@@ -2,12 +2,12 @@
 .Navbar {
   margin-right: auto;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
 .NavbarMenu {
-  color: #333;
+  color: hsl(var(--dark));
   width: max-content;
   padding-block: .5rem;
   border-radius: .5rem;

@@ -1,16 +1,62 @@
 .HeaderMain {
   color: #fff;
   background-color: hsl(var(--primary-hue), var(--primary-saturation), 40%);
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top .3s ease;
+
+  perspective: 1000px;
+  perspective-origin: 50%;
+
+  &.Nav-up {
+    top: calc(var(--header-height) * -1);
+  }
 }
 
-.HeaderMain > .container {
-  height: 80px;
+.HeaderMain>.container {
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
 
   .Logo {
-    width: 200px;
+    width: 150px;
+  }
+}
+
+.SearchBar {
+  box-shadow: var(--shadow-md);
+  background-color: #fff;
+  font-weight: 400;
+  color: hsla(var(--dark), .9);
+  transform-origin: top;
+  opacity: 0;
+  transition: transform .5s, opacity .3s .5s;
+
+  transform-style: preserve-3d;
+  transform: rotateX(-90deg);
+
+  &.is-visible {
+    transition: transform .5s, opacity .3s 0s;
+    opacity: 1;
+    transform: rotate(0);
+  }
+
+  .SearchBar-form {
+    display: flex;
+    align-items: center;
+  }
+
+  .field {
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .field[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
   }
 }
