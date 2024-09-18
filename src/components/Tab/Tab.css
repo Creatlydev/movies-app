@@ -1,0 +1,52 @@
+.TabList {
+  display: flex;
+  outline: 1px solid;
+  padding: .25rem;
+  max-width: max-content;
+  border-radius: 1rem;
+  background-color: #1c1c1c;
+  position: relative;
+  font-weight: 400;
+  overflow: hidden;
+  overflow-x: auto;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: none;
+}
+
+.TabList::-webkit-scrollbar {
+  display: none;
+}
+
+.TabList-indicator {
+  background-color: #fafafa;
+  position: absolute;
+  inset-block: .25rem;
+  border-radius: .75rem;
+  left: .25rem;
+  transition: left .3s, width .3s;
+  transition-timing-function: cubic-bezier(.87, -.5, .03, .5);
+}
+
+
+.TabItem {
+  scroll-snap-align: center;
+  z-index: 1;
+  color: #fafafa;
+  transition: color .4s;
+  flex-shrink: 0;
+
+  >button {
+    position: relative;
+    border-radius: .75rem;
+    height: 1.75rem;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    text-wrap: nowrap;
+  }
+
+  &.is-selected {
+    color: #1c1c1c;
+  }
+}
