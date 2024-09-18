@@ -60,3 +60,9 @@
     appearance: none;
   }
 }
+
+@media screen and (width > 760px) {
+  .ButtonMenu {
+    display: none;
+  }
+}

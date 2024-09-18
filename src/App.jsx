@@ -3,6 +3,7 @@
 
 import { Router } from './components/Router'
 import Home from './Pages/Home'
+import './App.css'
 
 const routes = [
   {
@@ -18,6 +19,7 @@ const routes = [
 function App () {
   return (
     <>
+      <div className='overlay' />
       <Router routes={routes} />
     </>
   )

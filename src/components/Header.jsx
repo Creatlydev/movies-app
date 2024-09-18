@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 
 import './Header.css'
-import { CloseCircleOutline, MagniferLinear } from './Icons'
+import { CloseCircleOutline, HamburgerMenuLinear, MagniferLinear } from './Icons'
 import Navbar from './Navbar'
 
 export default function Header () {
   const [isSearchVisible, setIsSearchVisible] = useState(false)
   const [navUp, setNavUp] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     let lastScrollTop = 0
@@ -31,11 +32,21 @@ export default function Header () {
   return (
     <header className={`HeaderMain ${navUp ? 'Nav-up' : 'Nav-down'}`}>
       <div className='container'>
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='ButtonMenu'>
+          <HamburgerMenuLinear
+            style={{
+              flexShrink: 0,
+              width: 32,
+              height: 32
+            }}
+          />
+
+        </button>
         <div className='Logo'>
           <img src='/src/assets/logo.svg' alt='Logo de the movie db' />
         </div>
 
-        <Navbar />
+        <Navbar open={isMenuOpen} />
 
         <button onClick={() => setIsSearchVisible(!isSearchVisible)}>
           {
@@ -48,7 +59,7 @@ export default function Header () {
 
       <div className={`SearchBar ${isSearchVisible ? 'is-visible' : 'is-hidden'}`}>
         <form className='SearchBar-form container'>
-          <MagniferLinear style={{ width: '20px', height: '16px' }} />
+          <MagniferLinear style={{ width: 20, height: 20 }} />
           <input className='field' type='search' placeholder='Busca una pelicula, serie o persona' />
         </form>
       </div>

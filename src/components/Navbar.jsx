@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import NavigationMenuDropdown from './NavigationMenu/NavigationMenuDropdown'
 import NavigationMenuItem from './NavigationMenu/NavigationMenuItem'
 import NavigationMenuTrigger from './NavigationMenu/NavigationMenuTrigger'
@@ -5,9 +6,9 @@ import NavigationMenuTrigger from './NavigationMenu/NavigationMenuTrigger'
 import './Navbar.css'
 import { Link } from './Link'
 
-export default function Navbar () {
+export default function Navbar ({ open }) {
   return (
-    <nav className='Navbar'>
+    <nav className={`Navbar ${open ? 'is-open' : ''}`}>
       <NavigationMenuItem>
         <NavigationMenuTrigger>
           Peliculas

@@ -1,0 +1,9 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: hsla(var(--dark), .5);
+  backdrop-filter: blur(2px);
+  z-index: var(--z-100);
+  opacity: 0;
+  pointer-events: none;
+}

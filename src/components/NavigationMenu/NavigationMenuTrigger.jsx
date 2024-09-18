@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import './NavigationMenuTrigger.css'
 
 export default function NavigationMenuTrigger ({ children, onClick }) {
   return (
