@@ -28,14 +28,10 @@
 }
 
 .SearchBar {
-  box-shadow: var(--shadow-md);
-  background-color: #fff;
-  font-weight: 400;
-  color: hsla(var(--dark), .9);
-  transform-origin: top;
+  box-shadow: var(--shadow-md);  
   opacity: 0;
+  transform-origin: top;
   transition: transform .5s, opacity .3s .5s;
-
   transform-style: preserve-3d;
   transform: rotateX(-90deg);
 
@@ -45,20 +41,6 @@
     transform: rotate(0);
   }
 
-  .SearchBar-form {
-    display: flex;
-    align-items: center;
-  }
-
-  .field {
-    appearance: none;
-    -webkit-appearance: none;
-  }
-
-  .field[type="search"]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-    appearance: none;
-  }
 }
 
 @media screen and (width > 760px) {

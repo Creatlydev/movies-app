@@ -1,36 +1,18 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
-import './Header.css'
 import { CloseCircleOutline, HamburgerMenuLinear, MagniferLinear } from './Icons'
 import Navbar from './Navbar'
+import FormSearh from './FormSearch'
+import { useHeaderVisibility } from '../hooks/useHeaderVisibility'
+import './Header.css'
 
 export default function Header () {
   const [isSearchVisible, setIsSearchVisible] = useState(false)
-  const [navUp, setNavUp] = useState(false)
+  const { isHeaderHidden } = useHeaderVisibility()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  useEffect(() => {
-    let lastScrollTop = 0
-    const toogleHeaderVisbility = () => {
-      const currentScrollTop = window.scrollY || document.documentElement.scrollTop
-
-      if (currentScrollTop > lastScrollTop) {
-        currentScrollTop > 72 && setNavUp(true)
-      } else {
-        setNavUp(false)
-      }
-      lastScrollTop = currentScrollTop
-    }
-
-    window.addEventListener('scroll', toogleHeaderVisbility)
-
-    return () => {
-      window.removeEventListener('scroll', toogleHeaderVisbility)
-    }
-  }, [])
-
   return (
-    <header className={`HeaderMain ${navUp ? 'Nav-up' : 'Nav-down'}`}>
+    <header className={`HeaderMain ${isHeaderHidden ? 'Nav-up' : 'Nav-down'}`}>
       <div className='container'>
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className='ButtonMenu'>
           <HamburgerMenuLinear
@@ -58,10 +40,7 @@ export default function Header () {
       </div>
 
       <div className={`SearchBar ${isSearchVisible ? 'is-visible' : 'is-hidden'}`}>
-        <form className='SearchBar-form container'>
-          <MagniferLinear style={{ width: 20, height: 20 }} />
-          <input className='field' type='search' placeholder='Busca una pelicula, serie o persona' />
-        </form>
+        <FormSearh />
       </div>
     </header>
   )

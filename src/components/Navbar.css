@@ -18,10 +18,11 @@
   padding: 1.5rem;
   box-shadow: var(--shadow-md);
   transform: translateX(-100%);
-  
+
   &.is-open {
     transition: transform .3s;
     transform: translate(0);
+    z-index: var(--z-1000);
   }
 }
 
@@ -62,9 +63,16 @@
     padding: unset;
     box-shadow: none;
     transform: translate(0);
+    z-index: var(--z-100);
   }
 }
 
 body:has(.Navbar.is-open) {
   overflow: hidden;
+
+  .overlay {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: var(--z-10);
+  }
 }
