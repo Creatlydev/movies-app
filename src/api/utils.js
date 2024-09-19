@@ -12,3 +12,16 @@ export const buildUrl = (path, params = {}) => {
 
   return url.toString()
 }
+
+// Generic function to request to API
+export async function fetchFromApi (url) {
+  try {
+    const response = await fetch(url)
+    if (!response.ok) {
+      throw new Error(`Error: ${response.statusText || 'Error to get response'}`)
+    }
+    return await response.json()
+  } catch (error) {
+    console.error('Error fetching data:', error)
+  }
+}
