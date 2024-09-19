@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import { Router } from './components/Router'
 import Home from './Pages/Home'
 import './App.css'

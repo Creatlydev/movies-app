@@ -1,11 +1,20 @@
 .TabHeader {
   display: flex;
-  gap: 1.5rem;
-  align-items: center;
+  gap: 1rem 1.5rem;
+  align-items: start;
   font-weight: 500;
+  flex-direction: column;
 
   >.TabHeader-title {
     font-size: 1.25rem;
+    text-wrap: nowrap;
+  }
+}
+
+@media screen and (width > 670px) {
+  .TabHeader {
+    flex-direction: row;
+    align-items: center;
   }
 }
 
@@ -13,6 +22,7 @@
   display: flex;
   outline: 1px solid;
   padding: .25rem;
+  width: 100%;
   max-width: max-content;
   border-radius: 1rem;
   background-color: #1c1c1c;

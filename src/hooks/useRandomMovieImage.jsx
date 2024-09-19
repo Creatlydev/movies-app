@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { fetchFromApi } from '../api/utils'
 import { API_ENDPOINTS } from '../api/endPoints'
+import { getRandomImages } from '../services/movies'
 
 export function useRandomMovieImage () {
   const [backgroundImage, setBackgroundImage] = useState('')
@@ -8,15 +8,12 @@ export function useRandomMovieImage () {
   useEffect(() => {
     async function fetchTrendMovieImage () {
       try {
-        const { results } = await fetchFromApi(API_ENDPOINTS.TREND_MOVIES())
+        const [{ poster }] = await getRandomImages({
+          url: API_ENDPOINTS.TREND_MOVIES(),
+          n: 1
+        })
 
-        if (results.length > 0) {
-          const randomMovie = results[
-            Math.floor(Math.random() * (results.length - 1))
-          ]
-
-          setBackgroundImage(randomMovie.backdrop_path)
-        }
+        setBackgroundImage(poster)
       } catch (error) {
         console.error('Error fetching trending movies:', error)
       }
@@ -25,5 +22,5 @@ export function useRandomMovieImage () {
     fetchTrendMovieImage()
   }, [])
 
-  return backgroundImage ? `${API_ENDPOINTS.BASE_URL_IMAGE}/w1280/${backgroundImage}` : null
+  return backgroundImage || null
 }

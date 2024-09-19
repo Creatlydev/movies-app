@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import NavigationMenuDropdown from './NavigationMenu/NavigationMenuDropdown'
 import NavigationMenuItem from './NavigationMenu/NavigationMenuItem'
 import NavigationMenuTrigger from './NavigationMenu/NavigationMenuTrigger'

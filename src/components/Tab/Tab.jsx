@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState, useEffect, useRef } from 'react'
 
 import './Tab.css'
@@ -50,7 +49,7 @@ export default function Tab ({ tabs, title }) {
       </header>
 
       <div className='TabContent'>
-        {tabs[activeTab].content ? tabs[activeTab].content : <p>Nad por mostrar</p>}
+        {tabs[activeTab].content ? tabs[activeTab].content : <p>Nada por mostrar</p>}
       </div>
     </div>
   )

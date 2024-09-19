@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState, useEffect, Children } from 'react'
 import { EVENTS } from '../consts'
 import { match } from 'path-to-regexp'

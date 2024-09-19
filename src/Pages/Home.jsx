@@ -7,31 +7,19 @@ import './Home.css'
 const trendTabs = [
   {
     label: 'Hoy',
-    content: <div>Tendencias de Hoy</div>
+    content: <div>Tendencias de Hoy</div>,
+    type: 'trending'
   },
   {
     label: 'Esta semana',
-    content: <div>Tendencias de esta semana</div>
-  }
-]
-
-const popularTabs = [
-  {
-    label: 'Retransmision'
-  },
-  {
-    label: 'En television'
-  },
-  {
-    label: 'En alquiler'
-  },
-  {
-    label: 'En cines'
+    content: <div>Tendencias de esta semana</div>,
+    type: 'trending'
   }
 ]
 
 export default function Home () {
   const backgroundImage = useRandomMovieImage()
+
   return (
     <>
       <Header />
@@ -61,14 +49,6 @@ export default function Home () {
           </div>
         </section>
 
-        <section className='Popular'>
-          <div className='container'>
-            <Tab
-              tabs={popularTabs}
-              title='Lo mas Popular'
-            />
-          </div>
-        </section>
       </main>
     </>
   )
