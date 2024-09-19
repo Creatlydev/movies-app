@@ -1,3 +1,14 @@
+.TabHeader {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  font-weight: 500;
+
+  >.TabHeader-title {
+    font-size: 1.25rem;
+  }
+}
+
 .TabList {
   display: flex;
   outline: 1px solid;
@@ -18,7 +29,7 @@
 }
 
 .TabList-indicator {
-  background-color: #fafafa;
+  background-color: hsl(var(--light));
   position: absolute;
   inset-block: .25rem;
   border-radius: .75rem;
@@ -31,7 +42,7 @@
 .TabItem {
   scroll-snap-align: center;
   z-index: 1;
-  color: #fafafa;
+  color: hsl(var(--light));
   transition: color .4s;
   flex-shrink: 0;
 
@@ -49,4 +60,9 @@
   &.is-selected {
     color: #1c1c1c;
   }
+}
+
+.TabContent {
+  padding-top: 1rem;
+  font-weight: 400;
 }

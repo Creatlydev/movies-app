@@ -1,5 +1,5 @@
 .HeaderMain {
-  color: #fff;
+  color: hsl(var(--white));
   background-color: hsl(var(--primary-hue), var(--primary-saturation), 40%);
   height: var(--header-height);
   position: fixed;
@@ -28,7 +28,7 @@
 }
 
 .SearchBar {
-  box-shadow: var(--shadow-md);  
+  box-shadow: var(--shadow-md);
   opacity: 0;
   transform-origin: top;
   transition: transform .5s, opacity .3s .5s;

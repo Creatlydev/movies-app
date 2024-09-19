@@ -1,6 +1,7 @@
 import FormSearh from '../components/FormSearch'
 import Header from '../components/Header'
 import Tab from '../components/Tab/Tab'
+import { useRandomMovieImage } from '../hooks/useRandomMovieImage'
 import './Home.css'
 
 const trendTabs = [
@@ -30,11 +31,16 @@ const popularTabs = [
 ]
 
 export default function Home () {
+  const backgroundImage = useRandomMovieImage()
   return (
     <>
       <Header />
       <main>
-        <section className='Hero container'>
+        <section
+          className='Hero container' style={{
+            backgroundImage: `url(${backgroundImage})`
+          }}
+        >
           <h1 className='Hero-title'>
             Te damos la Bienvenida.
             <span>
@@ -48,19 +54,19 @@ export default function Home () {
 
         <section className='Trends'>
           <div className='container'>
-            <header className='HeaderSection Trends-header'>
-              <h2 className='HeaderSection-title'>Tendencias</h2>
-              <Tab tabs={trendTabs} />
-            </header>
+            <Tab
+              tabs={trendTabs}
+              title='Tendencias'
+            />
           </div>
         </section>
 
         <section className='Popular'>
           <div className='container'>
-            <header className='HeaderSection Popular-header'>
-              <h2 className='HeaderSection-title'>Lo mas Popular</h2>
-              <Tab tabs={popularTabs} />
-            </header>
+            <Tab
+              tabs={popularTabs}
+              title='Lo mas Popular'
+            />
           </div>
         </section>
       </main>

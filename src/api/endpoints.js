@@ -2,8 +2,8 @@ import { buildUrl } from './utils'
 
 export const API_ENDPOINTS = {
   // TRENDS
-  TREND_MOVIES: (time) => buildUrl(`trending/movie/${time}`),
-  TREND_TV: (time) => buildUrl(`trending/tv/${time}`),
+  TREND_MOVIES: (time = 'day') => buildUrl(`trending/movie/${time}`),
+  TREND_TV: (time = 'day') => buildUrl(`trending/tv/${time}`),
 
   // MOVIE
   POPULAR_MOVIES: () => buildUrl('movie/popular'),
@@ -28,5 +28,8 @@ export const API_ENDPOINTS = {
   SEARCH_MULTI: (query) => buildUrl('search/multi', { query }),
 
   // SEARCH COLLECTION
-  SEARCH_COLLECTION: (query) => buildUrl('search/collection', { query })
+  SEARCH_COLLECTION: (query) => buildUrl('search/collection', { query }),
+
+  // URL BASE IMAGES
+  BASE_URL_IMAGE: 'https://image.tmdb.org/t/p'
 }

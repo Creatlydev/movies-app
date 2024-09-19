@@ -5,7 +5,7 @@ import './Tab.css'
 import TabItem from './TabItem'
 import TabList from './TabList'
 
-export default function Tab ({ tabs }) {
+export default function Tab ({ tabs, title }) {
   const [activeTab, setActiveTab] = useState(0)
   const [styles, setStyles] = useState({})
   const tabRefs = useRef([])
@@ -31,8 +31,10 @@ export default function Tab ({ tabs }) {
 
   return (
     <div>
-      <TabList style={styles}>
-        {
+      <header className='TabHeader'>
+        {title && <h2 className='TabHeader-title'>{title}</h2>}
+        <TabList style={styles}>
+          {
         tabs.map(({ label }, index) => (
           <TabItem
             key={index}
@@ -44,11 +46,12 @@ export default function Tab ({ tabs }) {
           </TabItem>
         ))
       }
-      </TabList>
+        </TabList>
+      </header>
 
-      {/* <div className='TabContent'>
-        {tabs[activeTab].content}
-      </div> */}
+      <div className='TabContent'>
+        {tabs[activeTab].content ? tabs[activeTab].content : <p>Nad por mostrar</p>}
+      </div>
     </div>
   )
 }

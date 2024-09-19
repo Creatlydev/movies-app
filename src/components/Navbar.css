@@ -11,7 +11,7 @@
   height: 100vh;
   top: var(--header-height);
   left: 0;
-  background-color: #fafafa;
+  background-color: hsl(var(--light));
   color: hsl(var(--dark));
   flex-direction: column;
   align-items: start;

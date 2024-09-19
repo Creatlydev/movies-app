@@ -1,5 +1,5 @@
 .FormSearch {
-  background-color: #fff;
+  background-color: hsl(var(--white));
   font-weight: 400;
   color: hsla(var(--dark), .9);
   display: flex;
@@ -25,7 +25,7 @@
     background-color: hsl(var(--primary));
     height: 3rem;
     padding: .5rem 1rem;
-    color: #fafafa;
+    color: hsl(var(--light));
     font-weight: 500;
   }
 
