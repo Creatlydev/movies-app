@@ -1,7 +1,9 @@
+import FormSearh from '../components/FormSearch'
 import Header from '../components/Header'
 import Tab from '../components/Tab/Tab'
+import './Home.css'
 
-const tabs = [
+const trendTabs = [
   {
     label: 'Hoy',
     content: <div>Tendencias de Hoy</div>
@@ -12,19 +14,55 @@ const tabs = [
   }
 ]
 
+const popularTabs = [
+  {
+    label: 'Retransmision'
+  },
+  {
+    label: 'En television'
+  },
+  {
+    label: 'En alquiler'
+  },
+  {
+    label: 'En cines'
+  }
+]
+
 export default function Home () {
   return (
     <>
       <Header />
+      <main>
+        <section className='Hero container'>
+          <h1 className='Hero-title'>
+            Te damos la Bienvenida.
+            <span>
+              Millones de peliculas, series y gente por descubrir. Explora ya.
+            </span>
+          </h1>
+          <div className='Hero-SearchBar'>
+            <FormSearh button={() => <button>Buscar</button>} />
+          </div>
+        </section>
 
-      <main className='container' style={{ paddingTop: 'var(--header-height)', marginBlock: '2rem' }}>
-        <div>
-          <Tab tabs={tabs} />
-        </div>
+        <section className='Trends'>
+          <div className='container'>
+            <header className='HeaderSection Trends-header'>
+              <h2 className='HeaderSection-title'>Tendencias</h2>
+              <Tab tabs={trendTabs} />
+            </header>
+          </div>
+        </section>
 
-        <br />
-        <br />
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum repudiandae fuga ducimus magni deleniti at sapiente et, aliquid ea quo reprehenderit, porro esse odio quasi velit assumenda sequi dicta. Molestias quas eius dolor fugiat soluta, nesciunt sapiente, pariatur voluptatum, ullam earum tempora? Rerum placeat similique, tenetur eligendi veritatis laudantium minima quasi ratione quibusdam dolore magni excepturi distinctio repudiandae voluptatem dignissimos pariatur ut adipisci a? Sapiente quia voluptatum dolorem ratione similique accusantium illum suscipit, consequatur inventore error magnam consectetur. Autem consequatur nesciunt provident commodi esse maiores quas ratione id quaerat rerum exercitationem voluptate amet distinctio, rem libero nulla voluptas officiis harum voluptatibus? Labore ipsam aliquam expedita at consectetur obcaecati pariatur eveniet deserunt, libero nam et corporis itaque molestias doloribus alias doloremque dolorum. Ipsam dignissimos dolor ex nulla quod quos praesentium delectus accusamus adipisci nobis quisquam repellat temporibus deserunt debitis officiis reprehenderit culpa, quaerat velit, ea consequuntur dicta beatae voluptate voluptatem. Eius culpa nulla earum sapiente ratione quisquam, maxime numquam? Ullam laboriosam alias quia asperiores ea eum aspernatur facilis excepturi voluptate voluptates eligendi deleniti, nesciunt doloremque rem eveniet voluptatibus maxime quo perferendis voluptas cupiditate, veritatis non necessitatibus. Quisquam quae dolorum distinctio eum? Dignissimos pariatur aspernatur corrupti deleniti, obcaecati, officiis quisquam voluptas doloribus, soluta sed odit! Quae perspiciatis dolore odit officia accusantium suscipit quibusdam libero magni? Amet minus voluptatibus consequatur quos maxime expedita quae veritatis, dignissimos aliquid ipsum cupiditate nostrum corporis velit nulla, dicta, eligendi iusto repellat eos. Ullam quo repellendus autem quidem asperiores, dolorum, vitae debitis magnam architecto fugiat perferendis obcaecati quisquam ratione. Esse a quidem ipsum animi excepturi repellat voluptatem dolore ea, quasi cumque error dolorum sunt, officia recusandae. Reiciendis ex saepe molestiae consequatur doloribus hic vel alias magnam maxime rem. Minus laudantium commodi aliquam illo fugiat praesentium, unde quaerat maxime quia earum sapiente vel minima tempora itaque placeat repellat cumque sint pariatur modi impedit voluptate officia harum non! Sint officia iste fugit odit possimus voluptatibus labore ipsum aliquid beatae dolorem sunt assumenda corporis doloremque dolorum magnam officiis dolores aut minima placeat rem, non distinctio? Enim quibusdam totam, consequuntur harum iure deleniti neque in commodi obcaecati illo iusto, vitae amet porro reiciendis, eum voluptas fuga nulla hic expedita quaerat aliquam id natus. Facere, quisquam repudiandae nulla consequuntur delectus blanditiis! Nesciunt cum quis animi aperiam alias odit sequi voluptate omnis ea, officiis temporibus doloremque illo porro possimus? Hic maiores rerum cupiditate mollitia aspernatur debitis cum soluta necessitatibus reiciendis sit sunt, animi quibusdam officiis obcaecati voluptatibus delectus esse exercitationem illo dignissimos eos sequi laboriosam. Ipsam magnam aperiam, soluta, quasi, nostrum aliquid sunt facere veritatis enim totam quidem vero iure delectus? Consequuntur dolor earum quae distinctio culpa consequatur exercitationem, aut amet corporis in sequi molestiae, dignissimos itaque quas magnam incidunt? Recusandae quisquam ut, dolores voluptate mollitia, commodi ducimus iste natus maxime unde quidem tempore quia, in quasi accusantium deleniti voluptatem sit! Recusandae magni repellendus cum nulla vitae numquam nihil eligendi voluptas atque ea nesciunt, eveniet voluptates in, nam reiciendis sed ipsa dignissimos libero dolores. Delectus ullam veritatis obcaecati rem, sint error culpa modi esse rerum exercitationem assumenda dolorem optio laboriosam animi voluptas porro accusantium, architecto incidunt, quisquam nesciunt veniam distinctio? Quo in eos sapiente assumenda eveniet veritatis rerum adipisci iure, esse culpa et. Dignissimos nihil odit a, voluptatum dolor ratione quia veniam velit, illo beatae sequi! Dolore perspiciatis porro, earum voluptatem tenetur quam enim ducimus sequi ipsa est sed odit ipsum cum in repudiandae officia maiores doloribus omnis facere eaque quas. Recusandae molestiae tenetur omnis. Libero in sapiente dolore dicta molestias. Sint eius dignissimos aperiam cum quisquam, labore ullam ratione neque saepe quod eaque consectetur aspernatur accusamus quas consequatur molestiae nam dolorum provident, nesciunt modi aut doloribus laudantium. Dolore ad a sapiente. Tempore expedita cupiditate libero fugit maiores soluta corporis recusandae sit placeat molestias magnam aliquid eius error, illum ut praesentium veritatis minus tempora nisi commodi obcaecati. Odit aperiam incidunt in atque delectus, ratione nulla modi provident maiores asperiores. Facilis eaque, voluptatum at, adipisci nulla voluptatem, corporis illo enim laudantium qui iusto ratione quidem assumenda quod maxime nisi error dicta rem inventore quibusdam neque quo! Tempora impedit aperiam dolores perferendis accusamus quibusdam, pariatur harum atque a vitae sint voluptas? Illo vitae, velit at quidem accusantium saepe quo corporis aliquam ad magni quae, ducimus hic amet inventore tempore nostrum. Non veniam, nisi soluta neque hic explicabo ratione nobis iste nulla illo in perspiciatis cumque facere sapiente. Perferendis blanditiis autem fuga nobis qui sequi quos quisquam quaerat, ipsa harum ducimus nam hic necessitatibus expedita corporis fugiat quod accusamus facere earum dolore deserunt maxime? Consectetur eaque repudiandae, ipsam quae dicta aspernatur iusto, quasi quis enim asperiores molestiae delectus rem nemo minus. Beatae, error architecto doloribus omnis ipsum a sed dolorum ex assumenda earum corporis molestiae magni delectus fugiat culpa totam nisi, maxime quibusdam eius eum dolore, tempore suscipit quia dolorem. Atque similique nobis pariatur totam. Libero minima quo eligendi, modi hic ex eius praesentium, iure culpa esse numquam nobis accusantium aliquid impedit, ratione soluta expedita vero? Nostrum molestiae fugit, minima ut, mollitia illum ratione officiis, accusantium dolores consectetur vitae fuga. Officiis a repudiandae sed molestiae tempora assumenda itaque eligendi ipsa asperiores facere ducimus illum aliquid soluta maiores, eaque autem doloremque earum culpa architecto eveniet reprehenderit eius ratione. Quasi obcaecati unde neque? Optio expedita quos facilis cum adipisci harum, ullam consequuntur libero magni officia exercitationem! Repudiandae, fuga similique! Expedita consequuntur distinctio at iste tempore, doloremque illum quod nulla quis, harum dolorum consequatur impedit porro quae totam incidunt laudantium voluptatum exercitationem dignissimos libero culpa quas nostrum. Voluptatem vitae omnis minus nihil aperiam impedit, eos, exercitationem asperiores est at tempora distinctio magni amet quos, totam temporibus a quas iure! Corporis debitis consectetur consequuntur dignissimos! Nobis voluptatibus culpa natus cupiditate. Fugit dolores minima, placeat iste esse id iure suscipit ullam beatae tenetur ipsa ab delectus quisquam aut eius cumque rem magni dolor ea praesentium. Atque consectetur assumenda, nobis minima a doloribus officia voluptate enim sed adipisci mollitia nihil molestias blanditiis cum aut error. Ea cum, deleniti fugiat architecto ad magnam veniam deserunt, delectus qui harum vitae at eveniet modi aliquid iste!
+        <section className='Popular'>
+          <div className='container'>
+            <header className='HeaderSection Popular-header'>
+              <h2 className='HeaderSection-title'>Lo mas Popular</h2>
+              <Tab tabs={popularTabs} />
+            </header>
+          </div>
+        </section>
       </main>
     </>
   )

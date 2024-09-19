@@ -30,7 +30,7 @@ export default function Tab ({ tabs }) {
   }, [activeTab])
 
   return (
-    <>
+    <div>
       <TabList style={styles}>
         {
         tabs.map(({ label }, index) => (
@@ -46,9 +46,9 @@ export default function Tab ({ tabs }) {
       }
       </TabList>
 
-      <div className='TabContent'>
+      {/* <div className='TabContent'>
         {tabs[activeTab].content}
-      </div>
-    </>
+      </div> */}
+    </div>
   )
 }

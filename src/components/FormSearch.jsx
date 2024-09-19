@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { MagniferLinear } from './Icons'
 import './FormSearch.css'
 
-export default function FormSearh () {
+export default function FormSearh ({ button: SearchButton }) {
   const handleSubmit = (event) => {
     event.preventDefault()
     console.log('Submit Form')
@@ -9,8 +10,11 @@ export default function FormSearh () {
 
   return (
     <form className='FormSearch container' onSubmit={handleSubmit}>
-      <MagniferLinear style={{ width: 20, height: 20 }} />
+      <MagniferLinear className='Icon' style={{ width: 20, height: 20 }} />
       <input className='FormSearch-field' type='search' placeholder='Busca una pelicula, serie o persona' />
+      {
+        SearchButton && <SearchButton />
+      }
     </form>
   )
 }

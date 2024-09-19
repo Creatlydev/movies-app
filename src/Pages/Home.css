@@ -1,0 +1,51 @@
+.Hero {
+  min-height: 350px;
+  padding-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: start;
+  justify-content: center;
+  border-radius: 0 0 1rem 1rem;
+  color: hsl(var(--dark));
+
+  .Hero-title {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    font-size: clamp(1.5rem, 10vw, 3.5rem);
+    font-weight: 700;
+    text-wrap: balance;
+
+    >span {
+      font-weight: 500;
+      font-size: clamp(1rem, 6vw, 2rem);
+    }
+  }
+
+  .Hero-SearchBar {
+    width: 100%;
+
+    .FormSearch {
+      width: 100%;
+      border-radius: 100vh;
+    }
+  }
+
+}
+
+section + section {
+  margin-top: 4rem;
+}
+
+.HeaderSection {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  color: hsl(var(--dark));
+}
+
+.HeaderSection-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}

@@ -4,6 +4,12 @@
   color: hsla(var(--dark), .9);
   display: flex;
   align-items: center;
+  overflow: hidden;
+  font-size: .875rem;
+
+  .Icon {
+    flex-shrink: 0;
+  }
 
   .FormSearch-field {
     appearance: none;
@@ -13,5 +19,28 @@
   .FormSearch-field[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
     appearance: none;
+  }
+
+  button {
+    background-color: hsl(var(--primary));
+    height: 3rem;
+    padding: .5rem 1rem;
+    color: #fafafa;
+    font-weight: 500;
+  }
+
+  &:has(button) {
+    padding-right: 0;
+  }
+
+}
+
+@media screen and (width > 540px) {
+  .FormSearch {
+    font-size: 1rem;
+
+    button {
+      padding: .5rem 2rem;
+    }
   }
 }
