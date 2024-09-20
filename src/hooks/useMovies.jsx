@@ -1,17 +1,15 @@
 import { useState, useCallback } from 'react'
-import { getTrendMovies } from '../services/movies'
+import { getMovies as getMoviesFromEndpoint } from '../services/movies'
 
-export function useMovies ({ get, time = 'day' }) {
+export function useMovies () {
   const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState(false)
 
-  const getMovies = useCallback(async () => {
+  const getMovies = useCallback(async (endpoint) => {
     try {
       setLoading(true)
-      if (get === 'trends') {
-        const movies = await getTrendMovies(time)
-        setMovies(movies)
-      }
+      const newMovies = await getMoviesFromEndpoint(endpoint)
+      setMovies(newMovies)
     } catch (error) {
       console.error('Error fetching in useMovies CustomHook', error)
     } finally {

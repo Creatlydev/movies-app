@@ -1,19 +1,24 @@
+import { API_ENDPOINTS } from '../api/endPoints'
 import FormSearh from '../components/FormSearch'
 import Header from '../components/Header'
-import Tab from '../components/Tab/Tab'
+import Tabs from '../components/Tabs/Tabs'
 import { useRandomMovieImage } from '../hooks/useRandomMovieImage'
 import './Home.css'
 
 const trendTabs = [
   {
     label: 'Hoy',
-    content: <div>Tendencias de Hoy</div>,
-    type: 'trending'
+    content: <div>Tendencias de hoy</div>,
+    type: 'trending',
+    labelledby: 'Tendencias de hoy',
+    endpoint: API_ENDPOINTS.TREND_MOVIES('day')
   },
   {
     label: 'Esta semana',
     content: <div>Tendencias de esta semana</div>,
-    type: 'trending'
+    type: 'trending',
+    labelledby: 'Tendencias de esta semana',
+    endpoint: API_ENDPOINTS.TREND_MOVIES('week')
   }
 ]
 
@@ -25,7 +30,7 @@ export default function Home () {
       <Header />
       <main>
         <section
-          className='Hero container' style={{
+          className='Hero  container' style={{
             backgroundImage: `url(${backgroundImage})`
           }}
         >
@@ -42,7 +47,7 @@ export default function Home () {
 
         <section className='Trends'>
           <div className='container'>
-            <Tab
+            <Tabs
               tabs={trendTabs}
               title='Tendencias'
             />

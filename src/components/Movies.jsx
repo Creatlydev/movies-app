@@ -1,5 +1,4 @@
 function ListOfMovies ({ movies }) {
-  console.log(movies)
   return (
     <ul className='Movies'>
       {

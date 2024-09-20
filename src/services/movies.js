@@ -52,8 +52,7 @@ export async function getRandomImages ({ url, n = 1 }) {
   }
 }
 
-export async function getTrendMovies (time = 'day') {
-  const url = API_ENDPOINTS.TREND_MOVIES(time)
+export async function getMovies (url) {
   const { results } = await fetchFromApi(url)
   return results?.map(movie => ({
     id: movie.id,

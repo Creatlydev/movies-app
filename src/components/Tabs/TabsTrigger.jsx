@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
 import { forwardRef } from 'react'
 
-const TabItem = forwardRef(({ isSelected, onClick, children }, ref) => {
+const TabsTrigger = forwardRef(({ isSelected, onClick, children, type, labelledby }, ref) => {
   return (
     <li
       ref={ref}
@@ -9,6 +8,8 @@ const TabItem = forwardRef(({ isSelected, onClick, children }, ref) => {
         ${isSelected ? 'is-selected' : ''}`}
       role='tab'
       aria-selected={isSelected}
+      data-type={type}
+      aria-labelledby={labelledby}
     >
       <button onClick={onClick}>
         {children}
@@ -17,6 +18,6 @@ const TabItem = forwardRef(({ isSelected, onClick, children }, ref) => {
   )
 })
 
-TabItem.displayName = 'TabItem'
+TabsTrigger.displayName = 'TabsTrigger'
 
-export default TabItem
+export default TabsTrigger

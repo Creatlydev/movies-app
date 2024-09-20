@@ -1,6 +1,4 @@
-/* eslint-disable react/prop-types */
-
-export default function TabList ({ children, ...props }) {
+export default function TabsList ({ children, ...props }) {
   return (
     <ul className='TabList' role='tablist'>
       {children}
