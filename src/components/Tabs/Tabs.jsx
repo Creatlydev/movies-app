@@ -6,7 +6,7 @@ import TabsList from './TabsList'
 import { useMovies } from '../../hooks/useMovies'
 import Movies from '../Movies'
 
-export default function Tabs ({ tabs, title }) {
+export default function Tabs ({ tabs, title, mediaType }) {
   const [activeTab, setActiveTab] = useState(0)
   const [styles, setStyles] = useState({})
   const tabRefs = useRef([])
@@ -37,11 +37,11 @@ export default function Tabs ({ tabs, title }) {
       const { offsetWidth, offsetLeft } = tabSelected
       setStyles({ width: offsetWidth, left: offsetLeft })
 
-      tabRefs.current[activeTab].scrollIntoView({
-        block: 'nearest',
-        inline: 'center',
-        behavior: 'smooth'
-      })
+      // tabRefs.current[activeTab].scrollIntoView({
+      //   block: 'nearest',
+      //   inline: 'center',
+      //   behavior: 'smooth'
+      // })
     }
   }, [activeTab])
 
@@ -51,14 +51,12 @@ export default function Tabs ({ tabs, title }) {
         {title && <h2 className='TabHeader-title'>{title}</h2>}
         <TabsList style={styles}>
           {
-        tabs.map(({ label, type, labelledby, endpoint }, index) => (
+        tabs.map(({ label, endpoint }, index) => (
           <TabsTrigger
             key={index}
             isSelected={activeTab === index}
             onClick={() => handleClick(index, endpoint)}
             ref={(el) => (tabRefs.current[index] = el)}
-            type={type}
-            labelledby={labelledby}
           >
             {label}
           </TabsTrigger>
@@ -68,7 +66,7 @@ export default function Tabs ({ tabs, title }) {
       </header>
 
       <div className='TabContent'>
-        {loading ? <p>Cargando...</p> : <Movies movies={movies} />}
+        {loading ? <p>Cargando...</p> : <Movies movies={movies} labelledby={tabs[activeTab].labelledby} mediaType={mediaType} />}
       </div>
     </div>
   )

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { BUTTONS, EVENTS } from '../consts'
 
 function navigate (href) {

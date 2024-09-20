@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 
-const TabsTrigger = forwardRef(({ isSelected, onClick, children, type, labelledby }, ref) => {
+const TabsTrigger = forwardRef(({ isSelected, onClick, children }, ref) => {
   return (
     <li
       ref={ref}
@@ -8,8 +8,6 @@ const TabsTrigger = forwardRef(({ isSelected, onClick, children, type, labelledb
         ${isSelected ? 'is-selected' : ''}`}
       role='tab'
       aria-selected={isSelected}
-      data-type={type}
-      aria-labelledby={labelledby}
     >
       <button onClick={onClick}>
         {children}

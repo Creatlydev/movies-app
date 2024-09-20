@@ -1,28 +1,28 @@
-function ListOfMovies ({ movies }) {
+import Movie from './Movie'
+import './Movies.css'
+
+function ListOfMovies ({ movies, labelledby, mediaType }) {
   return (
-    <ul className='Movies'>
+    <ul role='tabpanel' className='MoviesScroller' aria-labelledby={labelledby}>
       {
         movies.map(movie => (
-          <li className='Movies-Movie' key={movie.id}>
-            <a className='Movies-MovieLink' href={`/search/${movie.id}-${movie.title}`}>
-              <img src={movie.poster} alt={movie.title} />
-              <span>{Math.floor(movie.voteAverage * 100)}</span>
-              <h3>{movie.title}</h3>
-              <time dateTime={movie.releaseDate}>{movie.releaseDate}</time>
-            </a>
-          </li>
+          <Movie
+            key={movie.id}
+            movie={movie}
+            mediaType={mediaType}
+          />
         ))
         }
     </ul>
   )
 }
 
-export default function Movies ({ movies }) {
+export default function Movies ({ movies, labelledby, mediaType }) {
   const hasMovies = movies?.length > 0
   return (
     hasMovies
-      ? <ListOfMovies movies={movies} />
-      : <h2>Nothing</h2>
+      ? <ListOfMovies movies={movies} labelledby={labelledby} mediaType={mediaType} />
+      : <p>Not results</p>
 
   )
 }

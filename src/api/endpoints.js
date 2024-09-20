@@ -30,6 +30,12 @@ export const API_ENDPOINTS = {
   // SEARCH COLLECTION
   SEARCH_COLLECTION: (query) => buildUrl('search/collection', { query }),
 
+  // DISCOVER TYPE CONTENT TV
+  DISCOVER_TV_BY_TYPE: (type) => buildUrl('discover/tv', { with_type: type }),
+
+  // DISCOVER TV BY THEYR STATUS
+  DISCOVER_TV_BY_STATUS: (status) => buildUrl('discover/tv', { with_status: status }),
+
   // URL BASE IMAGES
   BASE_URL_IMAGE: 'https://image.tmdb.org/t/p'
 }

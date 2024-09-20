@@ -14,6 +14,7 @@
   background-size: cover;
   background-color: hsla(var(--dark), .8);
   background-blend-mode: multiply;
+  background-attachment: fixed;
 
   .Hero-title {
     display: flex;

@@ -56,8 +56,8 @@ export async function getMovies (url) {
   const { results } = await fetchFromApi(url)
   return results?.map(movie => ({
     id: movie.id,
-    title: movie.title,
-    releaseDate: movie.release_date,
+    title: movie.title || movie.name,
+    releaseDate: movie.release_date || movie.first_air_date,
     voteAverage: movie.vote_average,
     poster: `${API_ENDPOINTS.BASE_URL_IMAGE}/w300${movie.poster_path}`
   }))

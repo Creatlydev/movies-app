@@ -10,6 +10,14 @@ const routes = [
   {
     path: '/search/:query',
     Component: ({ routeParams }) => <h2>Resultados de {routeParams.query}</h2>
+  },
+  {
+    path: '/movie/:query',
+    Component: ({ routeParams }) => <h2>Detalles MOVIE de {routeParams.query}</h2>
+  },
+  {
+    path: '/tv/:query',
+    Component: ({ routeParams }) => <h2>Detalles TV de {routeParams.query}</h2>
   }
 ]
 
