@@ -2,6 +2,7 @@ import { Router } from './components/Router'
 import Home from './Pages/Home'
 import './App.css'
 import MovieDetails from './Pages/MovieDetails'
+import SerieDetails from './Pages/SerieDetails'
 
 const routes = [
   {
@@ -18,7 +19,7 @@ const routes = [
   },
   {
     path: '/tv/:query',
-    Component: ({ routeParams }) => <h2>Detalles TV de {routeParams.query}</h2>
+    Component: SerieDetails
   }
 ]
 

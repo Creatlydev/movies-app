@@ -8,17 +8,41 @@ export async function getDetails (mediaType, id) {
       : 'TV_DETAILS'](id)
   const details = await fetchFromApi(url)
 
+  const mappedDetails = mediaType === 'movie'
+    ? mappedMovieDetails(details)
+    : mappedSerieDetails(details)
+
+  return mappedDetails
+}
+
+function mappedMovieDetails (details) {
   return {
     adult: details.adult,
-    backdropPath: `${API_ENDPOINTS.BASE_URL_IMAGE}/w1280/${details.backdrop_path}`,
+    backdropPath: `${API_ENDPOINTS.BASE_URL_IMAGE}/w1920_and_h800_multi_faces/${details.backdrop_path}`,
     genres: details.genres,
     originalLanguage: details.original_language,
-    originalTitle: details.original_title,
+    originalTitle: details.original_title || details.original_name,
     description: details.overview,
     popularity: details.popularity,
     poster: `${API_ENDPOINTS.BASE_URL_IMAGE}/w300/${details.poster_path}`,
     releaseDate: details.release_date,
-    title: details.title,
+    title: details.title || details.name,
+    voterAverage: details.vote_average
+  }
+}
+
+function mappedSerieDetails (details) {
+  return {
+    adult: details.adult,
+    backdropPath: `${API_ENDPOINTS.BASE_URL_IMAGE}/w1920_and_h800_multi_faces/${details.backdrop_path}`,
+    genres: details.genres,
+    originalLanguage: details.original_language,
+    originalTitle: details.original_name,
+    description: details.overview,
+    popularity: details.popularity,
+    poster: `${API_ENDPOINTS.BASE_URL_IMAGE}/w300/${details.poster_path}`,
+    releaseDate: details.release_date,
+    title: details.name,
     voterAverage: details.vote_average
   }
 }

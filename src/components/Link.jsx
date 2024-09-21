@@ -1,7 +1,8 @@
+import { flushSync } from 'react-dom'
+
 import { BUTTONS, EVENTS } from '../consts'
 
 function navigate (href) {
-  console.log({ href })
   window.history.pushState({}, '', href)
 
   // crear un evento personalizado
@@ -17,7 +18,11 @@ export function Link ({ target, to, ...props }) {
 
     if (isMainEvent && isManageableEvent && !isModifiedEvent) {
       event.preventDefault()
-      navigate(to) // Navegacion con SPA
+      document.startViewTransition(() => {
+        flushSync(() => {
+          navigate(to) // Navegacion con SPA
+        })
+      })
     }
   }
 

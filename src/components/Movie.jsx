@@ -26,7 +26,10 @@ export default function Movie ({ movie, mediaType, onMouseEnter }) {
           className='MoviesScroller-MovieLink img'
           to={`/${mediaType}/${movie.id}-${movie.title}`}
         >
-          <img src={movie.poster} alt={movie.title} />
+          <img
+            src={movie.poster}
+            alt={movie.title}
+          />
         </Link>
       </div>
 

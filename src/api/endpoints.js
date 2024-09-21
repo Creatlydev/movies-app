@@ -19,7 +19,7 @@ export const API_ENDPOINTS = {
   ON_AIR_TV: () => buildUrl('tv/on_the_air'),
   TOP_RATED_TV: () => buildUrl('tv/top_rated'),
   SEARCH_TV: (query) => buildUrl('search/tv', { query }),
-  TV_DETAILS: (id) => buildUrl(`tv/${id}`),
+  TV_DETAILS: (id) => buildUrl(`tv/${id}`, { language: 'en-US' }),
 
   // PERSONS
   POPULAR_PERSON: () => buildUrl('person/popular'),
