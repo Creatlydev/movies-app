@@ -1,11 +1,10 @@
-import { useState } from 'react'
-
 import { API_ENDPOINTS } from '../api/endPoints'
 import FormSearh from '../components/FormSearch'
 import Header from '../components/Header'
-import Tabs from '../components/Tabs/Tabs'
 import { useRandomMovieImage } from '../hooks/useRandomMovieImage'
 import './Home.css'
+import MoviesGeneric from '../components/Sections/MoviesGeneric'
+import MoviesWithBackground from '../components/Sections/MoviesWithBackground'
 
 const trendTabs = [
   {
@@ -78,7 +77,6 @@ const tvByStatus = [
 
 export default function Home () {
   const backgroundImage = useRandomMovieImage()
-  const [hoverBgImage, setHoverBgImage] = useState('')
 
   return (
     <>
@@ -100,44 +98,26 @@ export default function Home () {
           </div>
         </section>
 
-        <section className='Trends'>
-          <div className='container'>
-            <Tabs
-              tabs={trendTabs}
-              title='Tendencias'
-              mediaType='movie'
-              type='trending'
-            />
-          </div>
-        </section>
+        <MoviesGeneric
+          tabs={trendTabs}
+          title='Tendencias'
+          mediaType='movie'
+          type='trending'
+        />
 
-        <section
-          className='MoviesByStatus'
-          style={{
-            '--bg-image': `url(${hoverBgImage})`
-          }}
-        >
-          <div className='container'>
-            <Tabs
-              tabs={tvByStatus}
-              title='Series TV en'
-              mediaType='tv'
-              setHoverBgImage={setHoverBgImage}
-              type='byStatus'
-            />
-          </div>
-        </section>
+        <MoviesWithBackground
+          tabs={tvByStatus}
+          title='Series TV en'
+          mediaType='tv'
+          type='byStatus'
+        />
 
-        <section className='MoviesByType'>
-          <div className='container'>
-            <Tabs
-              tabs={typeContent}
-              title='Contenido variado'
-              mediaType='tv'
-              type='byType'
-            />
-          </div>
-        </section>
+        <MoviesGeneric
+          tabs={typeContent}
+          title='Contenido variado'
+          mediaType='tv'
+          type='byType'
+        />
 
       </main>
     </>
