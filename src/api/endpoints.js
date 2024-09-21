@@ -36,6 +36,16 @@ export const API_ENDPOINTS = {
   // DISCOVER TV BY THEYR STATUS
   DISCOVER_TV_BY_STATUS: (status) => buildUrl('discover/tv', { with_status: status }),
 
+  // CATEGORIES
+  GENRES_MOVIE: () => buildUrl('genre/movie/list'),
+  GENRES_TV: () => buildUrl('genre/tv/list'),
+
+  // DISCOVER MOVIES BY CATEGORY
+  DISCOVER_MOVIES_BY_CATEGORY: (id) => buildUrl('discover/movie', { with_genres: id }),
+
+  // DISCOVER SERIES BY CATEGORY
+  DISCOVER_SERIES_BY_CATEGORY: (id) => buildUrl('discover/tv', { with_genres: id }),
+
   // URL BASE IMAGES
   BASE_URL_IMAGE: 'https://image.tmdb.org/t/p'
 }

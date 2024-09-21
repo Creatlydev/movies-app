@@ -5,6 +5,8 @@ import { useRandomMovieImage } from '../hooks/useRandomMovieImage'
 import './Home.css'
 import MoviesGeneric from '../components/Sections/MoviesGeneric'
 import MoviesWithBackground from '../components/Sections/MoviesWithBackground'
+import MoviesByCategory from '../components/Sections/MoviesByCategory'
+import SeriesByCategory from '../components/Sections/SeriesByCategory'
 
 const trendTabs = [
   {
@@ -118,6 +120,10 @@ export default function Home () {
           mediaType='tv'
           contentType='byType'
         />
+
+        <MoviesByCategory />
+
+        <SeriesByCategory />
 
       </main>
     </>

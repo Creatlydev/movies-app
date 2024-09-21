@@ -37,6 +37,12 @@ export default function Tabs ({ tabs, title, contentType, mediaType, ...props })
       const { offsetWidth, offsetLeft } = tabSelected
       setStyles({ width: offsetWidth, left: offsetLeft })
     }
+
+    tabSelected.scrollIntoView({
+      block: 'nearest',
+      inline: 'center',
+      behavior: 'smooth'
+    })
   }, [activeTab])
 
   return (

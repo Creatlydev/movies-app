@@ -88,10 +88,17 @@
       font-weight: 600;
       display: block;
       font-size: 1rem;
-      max-lines: 2;
       overflow: hidden;
       line-height: 1;
       transition: color .3s;
+
+      h3 {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 
       &:hover {
         color: hsl(var(--primary));
@@ -101,6 +108,7 @@
     .MoviesScroller-MovieReleaseDate {
       margin-top: auto;
       color: hsl(var(--dark), .6);
+      font-weight: 500;
     }
   }
 }
