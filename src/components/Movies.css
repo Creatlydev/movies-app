@@ -113,7 +113,7 @@
   height: 300px;
 }
 
-.MoviesByStatus:has(.MoviesScroller-Movie) .container {
+.MoviesByStatus .container {
   background: var(--bg-image), linear-gradient(to top,
       hsla(var(--tmdbDarkBlue), .75),
       hsla(var(--tmdbDarkBlue), .75));
@@ -124,6 +124,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+  background-size: cover;
 }
 
 .MoviesByStatus:has(.MoviesScroller-Movie) .MoviesScroller-Movie {

@@ -4,6 +4,7 @@
   align-items: start;
   font-weight: 500;
   flex-direction: column;
+  margin-bottom: 1rem;
 
   >.TabHeader-title {
     font-size: 1.25rem;
@@ -72,9 +73,4 @@
   }
 }
 
-.TabContent {
-  padding-top: 1rem;
-  font-weight: 400;
-  height: 340px;
-}
 

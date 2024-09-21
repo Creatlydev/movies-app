@@ -2,11 +2,11 @@ import { useState } from 'react'
 
 import Tabs from '../Tabs/Tabs'
 
-export default function MoviesWithBackground ({ tabs, ...props }) {
+export default function MoviesWithBackground ({ tabs, title, mediaType, contentType }) {
   const [backgroundImage, setBackgroundImage] = useState('')
   return (
     <section
-      className='MoviesByStatus'
+      className='MoviesByStatus Section with-background'
       style={{
         '--bg-image': `url(${backgroundImage})`
       }}
@@ -14,7 +14,9 @@ export default function MoviesWithBackground ({ tabs, ...props }) {
       <div className='container'>
         <Tabs
           tabs={tabs}
-          {...props}
+          title={title}
+          contentType={contentType}
+          mediaType={mediaType}
           onMouseEnter={setBackgroundImage}
         />
       </div>

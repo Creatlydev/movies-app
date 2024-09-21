@@ -1,7 +1,7 @@
 import Movie from './Movie'
 import './Movies.css'
 
-function ScrollerMovies ({ movies, labelledby, ...props }) {
+function ScrollerMovies ({ movies, labelledby, mediaType, ...props }) {
   return (
     <ul role='tabpanel' className='MoviesScroller' aria-labelledby={labelledby}>
       {
@@ -9,6 +9,7 @@ function ScrollerMovies ({ movies, labelledby, ...props }) {
           <Movie
             key={movie.id}
             movie={movie}
+            mediaType={mediaType}
             {...props}
           />
         ))
@@ -17,12 +18,13 @@ function ScrollerMovies ({ movies, labelledby, ...props }) {
   )
 }
 
-export default function Movies ({ movies, ...props }) {
+export default function Movies ({ movies, mediaType, ...props }) {
   const hasMovies = movies?.length > 0
   return (
     hasMovies
       ? <ScrollerMovies
           movies={movies}
+          mediaType={mediaType}
           {...props}
         />
       : <p>Not results</p>

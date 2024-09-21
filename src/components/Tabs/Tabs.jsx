@@ -6,7 +6,7 @@ import TabsList from './TabsList'
 import { useMovies } from '../../hooks/useMovies'
 import TabsPanel from './TabsPanel'
 
-export default function Tabs ({ tabs, title, type, ...props }) {
+export default function Tabs ({ tabs, title, contentType, mediaType, ...props }) {
   const [activeTab, setActiveTab] = useState(0)
   const [styles, setStyles] = useState({})
   const tabRefs = useRef([])
@@ -62,7 +62,8 @@ export default function Tabs ({ tabs, title, type, ...props }) {
       <TabsPanel
         movies={movies}
         loading={loading}
-        sectionType={type}
+        sectionType={contentType}
+        mediaType={mediaType}
         labelledby={tabs[activeTab].labelledby}
         {...props}
       />

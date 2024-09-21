@@ -19,10 +19,10 @@ export default function Movie ({ movie, mediaType, onMouseEnter }) {
       className='MoviesScroller-Movie'
       title={movie.title}
       onMouseEnter={() => onHoverChangeImage()}
+      data-media-type={mediaType}
     >
       <div className='MoviesScroller-MovieImg'>
         <Link
-          data-media-type={mediaType}
           className='MoviesScroller-MovieLink img'
           to={`/${mediaType}/${movie.id}-${movie.title}`}
         >

@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react'
-import { SkeletonMovies1 } from '../skeleton/SkeletonMovies'
+import { SkeletonSectionGeneric } from '../skeleton/SkeletonSectionGeneric'
 import Movies from '../Movies'
+import { SkeletonSectionWithBackground } from '../skeleton/SkeletonSectionWithBackground'
 
-export default function TabsPanel ({ movies, loading, sectionType, ...props }) {
+export default function TabsPanel ({ movies, loading, mediaType, sectionType, ...props }) {
   const [skeleton, setSkeleton] = useState('')
 
   useEffect(() => {
     let newSkeleton = null
     if (['trending', 'byType'].includes(sectionType)) {
-      newSkeleton = <SkeletonMovies1 />
+      newSkeleton = <SkeletonSectionGeneric />
     } else {
-      newSkeleton = <p>Cargando ...</p>
+      newSkeleton = <SkeletonSectionWithBackground />
     }
 
     setSkeleton(newSkeleton)
@@ -23,6 +24,7 @@ export default function TabsPanel ({ movies, loading, sectionType, ...props }) {
           ? skeleton
           : <Movies
               movies={movies}
+              mediaType={mediaType}
               {...props}
             />
       }

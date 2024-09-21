@@ -19,7 +19,7 @@ const trendTabs = [
   }
 ]
 
-const typeContent = [
+const tvByType = [
   {
     label: 'Miniseries',
     labelledby: 'Miniseries',
@@ -102,21 +102,21 @@ export default function Home () {
           tabs={trendTabs}
           title='Tendencias'
           mediaType='movie'
-          type='trending'
+          contentType='trending'
         />
 
         <MoviesWithBackground
           tabs={tvByStatus}
           title='Series TV en'
           mediaType='tv'
-          type='byStatus'
+          contentType='byStatus'
         />
 
         <MoviesGeneric
-          tabs={typeContent}
+          tabs={tvByType}
           title='Contenido variado'
           mediaType='tv'
-          type='byType'
+          contentType='byType'
         />
 
       </main>
