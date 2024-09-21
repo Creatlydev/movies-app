@@ -106,6 +106,7 @@ export default function Home () {
               tabs={trendTabs}
               title='Tendencias'
               mediaType='movie'
+              type='trending'
             />
           </div>
         </section>
@@ -122,6 +123,7 @@ export default function Home () {
               title='Series TV en'
               mediaType='tv'
               setHoverBgImage={setHoverBgImage}
+              type='byStatus'
             />
           </div>
         </section>
@@ -132,6 +134,7 @@ export default function Home () {
               tabs={typeContent}
               title='Contenido variado'
               mediaType='tv'
+              type='byType'
             />
           </div>
         </section>

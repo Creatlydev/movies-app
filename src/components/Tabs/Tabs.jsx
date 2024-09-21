@@ -5,8 +5,9 @@ import TabsTrigger from './TabsTrigger'
 import TabsList from './TabsList'
 import { useMovies } from '../../hooks/useMovies'
 import Movies from '../Movies'
+import { SkeletonMovies1 } from '../skeleton/SkeletonMovies'
 
-export default function Tabs ({ tabs, title, mediaType, setHoverBgImage }) {
+export default function Tabs ({ tabs, title, mediaType, setHoverBgImage, type }) {
   const [activeTab, setActiveTab] = useState(0)
   const [styles, setStyles] = useState({})
   const tabRefs = useRef([])
@@ -68,7 +69,9 @@ export default function Tabs ({ tabs, title, mediaType, setHoverBgImage }) {
       <div className='TabContent'>
         {
         loading
-          ? <p>Cargando...</p>
+          ? type === 'trending' || type === 'byType'
+            ? <SkeletonMovies1 />
+            : <p>Cargando...</p>
           : <Movies
               movies={movies}
               labelledby={tabs[activeTab].labelledby}
