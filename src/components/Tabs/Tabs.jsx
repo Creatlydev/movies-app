@@ -4,8 +4,7 @@ import './Tabs.css'
 import TabsTrigger from './TabsTrigger'
 import TabsList from './TabsList'
 import { useMovies } from '../../hooks/useMovies'
-import Movies from '../Movies'
-import { SkeletonMovies1 } from '../skeleton/SkeletonMovies'
+import TabsPanel from './TabsPanel'
 
 export default function Tabs ({ tabs, title, type, ...props }) {
   const [activeTab, setActiveTab] = useState(0)
@@ -37,12 +36,6 @@ export default function Tabs ({ tabs, title, type, ...props }) {
     if (tabSelected) {
       const { offsetWidth, offsetLeft } = tabSelected
       setStyles({ width: offsetWidth, left: offsetLeft })
-
-      // tabRefs.current[activeTab].scrollIntoView({
-      //   block: 'nearest',
-      //   inline: 'center',
-      //   behavior: 'smooth'
-      // })
     }
   }, [activeTab])
 
@@ -66,19 +59,13 @@ export default function Tabs ({ tabs, title, type, ...props }) {
         </TabsList>
       </header>
 
-      <div className='TabContent'>
-        {
-        loading
-          ? type === 'trending' || type === 'byType'
-            ? <SkeletonMovies1 />
-            : <p>Cargando...</p>
-          : <Movies
-              movies={movies}
-              labelledby={tabs[activeTab].labelledby}
-              {...props}
-            />
-        }
-      </div>
+      <TabsPanel
+        movies={movies}
+        loading={loading}
+        sectionType={type}
+        labelledby={tabs[activeTab].labelledby}
+        {...props}
+      />
     </div>
   )
 }
