@@ -7,7 +7,7 @@ import { useMovies } from '../../hooks/useMovies'
 import Movies from '../Movies'
 import { SkeletonMovies1 } from '../skeleton/SkeletonMovies'
 
-export default function Tabs ({ tabs, title, mediaType, setHoverBgImage, type }) {
+export default function Tabs ({ tabs, title, type, ...props }) {
   const [activeTab, setActiveTab] = useState(0)
   const [styles, setStyles] = useState({})
   const tabRefs = useRef([])
@@ -75,8 +75,7 @@ export default function Tabs ({ tabs, title, mediaType, setHoverBgImage, type })
           : <Movies
               movies={movies}
               labelledby={tabs[activeTab].labelledby}
-              mediaType={mediaType}
-              setHoverBgImage={setHoverBgImage}
+              {...props}
             />
         }
       </div>

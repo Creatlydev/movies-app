@@ -1,7 +1,7 @@
 import Movie from './Movie'
 import './Movies.css'
 
-function ListOfMovies ({ movies, labelledby, mediaType, setHoverBgImage }) {
+function ScrollerMovies ({ movies, labelledby, ...props }) {
   return (
     <ul role='tabpanel' className='MoviesScroller' aria-labelledby={labelledby}>
       {
@@ -9,8 +9,7 @@ function ListOfMovies ({ movies, labelledby, mediaType, setHoverBgImage }) {
           <Movie
             key={movie.id}
             movie={movie}
-            mediaType={mediaType}
-            setHoverBgImage={setHoverBgImage}
+            {...props}
           />
         ))
         }
@@ -18,15 +17,13 @@ function ListOfMovies ({ movies, labelledby, mediaType, setHoverBgImage }) {
   )
 }
 
-export default function Movies ({ movies, labelledby, mediaType, setHoverBgImage }) {
+export default function Movies ({ movies, ...props }) {
   const hasMovies = movies?.length > 0
   return (
     hasMovies
-      ? <ListOfMovies
+      ? <ScrollerMovies
           movies={movies}
-          labelledby={labelledby}
-          mediaType={mediaType}
-          setHoverBgImage={setHoverBgImage}
+          {...props}
         />
       : <p>Not results</p>
 

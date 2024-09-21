@@ -15,7 +15,7 @@ export default function MoviesWithBackground ({ tabs, ...props }) {
         <Tabs
           tabs={tabs}
           {...props}
-          setHoverBgImage={setBackgroundImage}
+          onMouseEnter={setBackgroundImage}
         />
       </div>
     </section>
