@@ -54,11 +54,13 @@ export async function getRandomImages ({ url, n = 1 }) {
 
 export async function getMovies (url) {
   const { results } = await fetchFromApi(url)
-  return results?.map(movie => ({
+  const filterResultWithoutPosterImage = results.filter(movie => movie.poster_path)
+  return filterResultWithoutPosterImage?.map(movie => ({
     id: movie.id,
     title: movie.title || movie.name,
     releaseDate: movie.release_date || movie.first_air_date,
     voteAverage: movie.vote_average,
-    poster: `${API_ENDPOINTS.BASE_URL_IMAGE}/w300${movie.poster_path}`
+    poster: `${API_ENDPOINTS.BASE_URL_IMAGE}/w300${movie.poster_path}`,
+    backdropPath: `${API_ENDPOINTS.BASE_URL_IMAGE}/w1280${movie.backdrop_path || movie.poster_path}`
   }))
 }

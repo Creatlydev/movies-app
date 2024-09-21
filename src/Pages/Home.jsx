@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import { API_ENDPOINTS } from '../api/endPoints'
 import FormSearh from '../components/FormSearch'
 import Header from '../components/Header'
@@ -76,6 +78,7 @@ const tvByStatus = [
 
 export default function Home () {
   const backgroundImage = useRandomMovieImage()
+  const [hoverBgImage, setHoverBgImage] = useState('')
 
   return (
     <>
@@ -107,12 +110,18 @@ export default function Home () {
           </div>
         </section>
 
-        <section className='MoviesByStatus'>
+        <section
+          className='MoviesByStatus'
+          style={{
+            '--bg-image': `url(${hoverBgImage})`
+          }}
+        >
           <div className='container'>
             <Tabs
               tabs={tvByStatus}
               title='Series TV en'
               mediaType='tv'
+              setHoverBgImage={setHoverBgImage}
             />
           </div>
         </section>

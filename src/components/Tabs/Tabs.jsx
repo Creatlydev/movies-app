@@ -6,7 +6,7 @@ import TabsList from './TabsList'
 import { useMovies } from '../../hooks/useMovies'
 import Movies from '../Movies'
 
-export default function Tabs ({ tabs, title, mediaType }) {
+export default function Tabs ({ tabs, title, mediaType, setHoverBgImage }) {
   const [activeTab, setActiveTab] = useState(0)
   const [styles, setStyles] = useState({})
   const tabRefs = useRef([])
@@ -66,7 +66,16 @@ export default function Tabs ({ tabs, title, mediaType }) {
       </header>
 
       <div className='TabContent'>
-        {loading ? <p>Cargando...</p> : <Movies movies={movies} labelledby={tabs[activeTab].labelledby} mediaType={mediaType} />}
+        {
+        loading
+          ? <p>Cargando...</p>
+          : <Movies
+              movies={movies}
+              labelledby={tabs[activeTab].labelledby}
+              mediaType={mediaType}
+              setHoverBgImage={setHoverBgImage}
+            />
+        }
       </div>
     </div>
   )

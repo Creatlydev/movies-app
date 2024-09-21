@@ -50,7 +50,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    color: hsl(var(--dark));
 
     .MoviesScroller-userScore {
       line-height: 1;
@@ -110,26 +109,34 @@
   display: none;
 }
 
-.MoviesByStatus:has(.MoviesScroller) .MoviesScroller{
+.MoviesByStatus:has(.MoviesScroller) .MoviesScroller {
   height: 300px;
 }
 
 .MoviesByStatus:has(.MoviesScroller-Movie) .container {
-  background: linear-gradient(
-    to top,
-    hsl(var(--tmdbDarkBlue)),
-    hsl(var(--tmdbDarkBlue))
-  );
+  background: var(--bg-image), linear-gradient(to top,
+      hsla(var(--tmdbDarkBlue), .75),
+      hsla(var(--tmdbDarkBlue), .75));
   padding: 2rem;
   border-radius: 1rem;
   color: #fff;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .MoviesByStatus:has(.MoviesScroller-Movie) .MoviesScroller-Movie {
   width: 280px;
-  background-color: hsl(var(--white), .9);
+  background-color: hsl(var(--tmdbDarkBlue), .5);
+  color: hsl(var(--light), .75);
+  backdrop-filter: blur(4px);
 
-  .MoviesScroller-MovieImg  {
+  .MoviesScroller-MovieImg {
     height: 180px;
+  }
+
+  .MoviesScroller-MovieReleaseDate {
+    color: hsl(var(--light), .55);
   }
 }

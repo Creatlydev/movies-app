@@ -1,11 +1,31 @@
+import { useEffect } from 'react'
+
 import { StarBold } from './Icons'
 import { Link } from './Link'
 
-export default function Movie ({ movie, mediaType }) {
+export default function Movie ({ movie, mediaType, setHoverBgImage }) {
+  const onHoverChangeImage = () => {
+    if (!setHoverBgImage) return
+    setHoverBgImage(`${movie.backdropPath}`)
+  }
+
+  useEffect(() => {
+    if (!setHoverBgImage) return
+    setHoverBgImage(`${movie.backdropPath}`)
+  }, [])
+
   return (
-    <li className='MoviesScroller-Movie' title={movie.title}>
+    <li
+      className='MoviesScroller-Movie'
+      title={movie.title}
+    >
       <div className='MoviesScroller-MovieImg'>
-        <Link data-media-type={mediaType} className='MoviesScroller-MovieLink img' to={`/${mediaType}/${movie.id}-${movie.title}`}>
+        <Link
+          data-media-type={mediaType}
+          className='MoviesScroller-MovieLink img'
+          to={`/${mediaType}/${movie.id}-${movie.title}`}
+          onMouseEnter={() => onHoverChangeImage()}
+        >
           <img src={movie.poster} alt={movie.title} />
         </Link>
       </div>
