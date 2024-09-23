@@ -14,6 +14,8 @@ export default function Movie ({ movie, mediaType, onMouseEnter }) {
     onMouseEnter(`${movie.backdropPath}`)
   }, [])
 
+  const movieTitle = window.encodeURIComponent(movie.title)
+
   return (
     <li
       className='MoviesScroller-Movie'
@@ -24,7 +26,7 @@ export default function Movie ({ movie, mediaType, onMouseEnter }) {
       <div className='MoviesScroller-MovieImg'>
         <Link
           className='MoviesScroller-MovieLink img'
-          to={`/${mediaType}/${movie.id}-${movie.title}`}
+          to={`/${mediaType}/${movie.id}-${movieTitle}`}
         >
           <img
             src={movie.poster}
@@ -43,7 +45,7 @@ export default function Movie ({ movie, mediaType, onMouseEnter }) {
           />
         </div>
 
-        <Link data-media-type={mediaType} className='MoviesScroller-MovieLink title' to={`/${mediaType}/${movie.id}-${movie.title}`}>
+        <Link data-media-type={mediaType} className='MoviesScroller-MovieLink title' to={`/${mediaType}/${movie.id}-${movieTitle}`}>
           <h3>{movie.title}</h3>
         </Link>
 

@@ -3,7 +3,7 @@ import { EVENTS } from '../consts'
 import { match } from 'path-to-regexp'
 import { getCurrentPath } from '../utils'
 
-export function Router ({ children, routes = [], defaultComponent: DefaultComponent = () => <h1>404</h1> }) {
+export function Router ({ children, routes = [], defaultComponent: DefaultComponent = () => <main>404</main> }) {
   const [currentPath, setCurrentPath] = useState(getCurrentPath())
 
   useEffect(() => {

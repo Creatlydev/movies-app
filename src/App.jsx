@@ -15,8 +15,12 @@ const routes = [
     Component: Home
   },
   {
+    path: '/movie/now-playing',
+    Component: () => <main>NOW PLAYING</main>
+  },
+  {
     path: '/search/:query',
-    Component: ({ routeParams }) => <h2>Resultados de {routeParams.query}</h2>
+    Component: ({ routeParams }) => <main>Resultados de {routeParams.query}</main>
   },
   {
     path: '/movie/:query',
@@ -30,12 +34,14 @@ const routes = [
 
 function App () {
   return (
-    <Suspense fallback={null}>
-      <Header />
-      <div className='overlay' />
-      <Router routes={routes} />
-      <Footer />
-    </Suspense>
+    <div className='main-wrapper'>
+      <Suspense fallback={null}>
+        <Header />
+        <div className='overlay' />
+        <Router routes={routes} />
+        <Footer />
+      </Suspense>
+    </div>
   )
 }
 
