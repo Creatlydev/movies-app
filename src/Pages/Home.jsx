@@ -77,6 +77,14 @@ const tvByStatus = [
   }
 ]
 
+const toKids = [
+  {
+    label: 'Animacion',
+    labelledby: 'Peliculas para los mas pequeños del hogar',
+    endpoint: API_ENDPOINTS.DISCOVER_MOVIES_BY_CATEGORY(16)
+  }
+]
+
 export default function Home () {
   const backgroundImage = useRandomMovieImage()
 
@@ -122,6 +130,13 @@ export default function Home () {
         />
 
         <MoviesByCategory />
+
+        <MoviesWithBackground
+          tabs={toKids}
+          title='Para los mas pequeños'
+          mediaType='movie'
+          contentType='toKids'
+        />
 
         <SeriesByCategory />
 
