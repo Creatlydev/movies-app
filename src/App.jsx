@@ -1,8 +1,13 @@
+import { lazy, Suspense } from 'react'
+
 import { Router } from './components/Router'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import Home from './Pages/Home'
 import './App.css'
-import MovieDetails from './Pages/MovieDetails'
-import SerieDetails from './Pages/SerieDetails'
+
+const LazyMovieDetails = lazy(() => import('./Pages/MovieDetails'))
+const LazySerieDetails = lazy(() => import('./Pages/SerieDetails'))
 
 const routes = [
   {
@@ -15,20 +20,22 @@ const routes = [
   },
   {
     path: '/movie/:query',
-    Component: MovieDetails
+    Component: LazyMovieDetails
   },
   {
     path: '/tv/:query',
-    Component: SerieDetails
+    Component: LazySerieDetails
   }
 ]
 
 function App () {
   return (
-    <>
+    <Suspense fallback={null}>
+      <Header />
       <div className='overlay' />
       <Router routes={routes} />
-    </>
+      <Footer />
+    </Suspense>
   )
 }
 

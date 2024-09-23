@@ -1,6 +1,4 @@
 import { API_ENDPOINTS } from '../api/endPoints'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
 import { StarBold } from '../components/Icons'
 import { Link } from '../components/Link'
 import MoviesWithBackground from '../components/Sections/MoviesWithBackground'
@@ -40,10 +38,7 @@ export default function MovieDetails ({ routeParams }) {
 
   if (loading) {
     return (
-      <>
-        <Header />
-        <SkeletonDetails />
-      </>
+      <SkeletonDetails />
     )
   }
 
@@ -51,7 +46,6 @@ export default function MovieDetails ({ routeParams }) {
     <>
       <main>
 
-        <Header />
         <section
           className='HeroBackground'
           style={{
@@ -148,8 +142,6 @@ export default function MovieDetails ({ routeParams }) {
           </section>
         </div>
       </main>
-
-      <Footer />
 
     </>
 

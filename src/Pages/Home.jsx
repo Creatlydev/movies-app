@@ -1,13 +1,11 @@
 import { API_ENDPOINTS } from '../api/endPoints'
 import FormSearh from '../components/FormSearch'
-import Header from '../components/Header'
 import { useRandomMovieImage } from '../hooks/useRandomMovieImage'
 import './Home.css'
 import MoviesGeneric from '../components/Sections/MoviesGeneric'
 import MoviesWithBackground from '../components/Sections/MoviesWithBackground'
 import MoviesByCategory from '../components/Sections/MoviesByCategory'
 import SeriesByCategory from '../components/Sections/SeriesByCategory'
-import Footer from '../components/Footer'
 
 const trendTabs = [
   {
@@ -91,7 +89,6 @@ export default function Home () {
 
   return (
     <>
-      <Header />
       <main>
         <section
           className='Hero  container' style={{
@@ -142,8 +139,6 @@ export default function Home () {
         <SeriesByCategory />
 
       </main>
-
-      <Footer />
     </>
   )
 }
