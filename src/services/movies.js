@@ -26,11 +26,6 @@ export async function searchMovies (query) {
   return fetchFromApi(url)
 }
 
-export async function getMovieDetails (id) {
-  const url = API_ENDPOINTS.MOVIE_DETAILS(id)
-  return fetchFromApi(url)
-}
-
 export async function getRandomImages ({ url, n = 1 }) {
   const { results } = await fetchFromApi(url)
   const randomData = []

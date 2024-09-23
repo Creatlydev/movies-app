@@ -190,7 +190,7 @@
 
 
     .PersonInfo {
-      padding: .5rem;
+      padding: .75rem .5rem;
 
       .PersonInfo-link {
         transition: color .3s;
@@ -209,6 +209,11 @@
         font-size: .875rem;
         color: hsla(var(--dark), .8);
         font-weight: 400;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }

@@ -5,7 +5,7 @@ import Tabs from '../Tabs/Tabs'
 export default function SeriesByCategory () {
   const { loading, categories } = useCategories('tv')
 
-  const seriesCategories = categories.map(category => ({
+  const seriesCategories = categories?.map(category => ({
     label: category.name,
     labelledby: `Peliculas en la categoria ${category.name}`,
     endpoint: API_ENDPOINTS.DISCOVER_SERIES_BY_CATEGORY(category.id)

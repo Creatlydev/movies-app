@@ -40,7 +40,7 @@ export default function Tabs ({ tabs, title, contentType, mediaType, ...props })
     }
 
     tabSelected.scrollIntoView({
-      block: 'nearest',
+      block: 'end',
       inline: 'center',
       behavior: 'smooth'
     })

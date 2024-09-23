@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import { StarBold } from '../components/Icons'
 import { Link } from '../components/Link'
 import MoviesWithBackground from '../components/Sections/MoviesWithBackground'
+import SkeletonDetails from '../components/skeleton/SkeletonDetails'
 import { useDetails } from '../hooks/useDetails'
 import { getIdFromQuery } from '../utils/getIdFromQuery'
 
@@ -38,7 +39,12 @@ export default function SerieDetails ({ routeParams }) {
   const tabs = similarSeries(id)
 
   if (loading) {
-    return <p>Cargando detalles...</p>
+    return (
+      <>
+        <Header />
+        <SkeletonDetails />
+      </>
+    )
   }
 
   return (
