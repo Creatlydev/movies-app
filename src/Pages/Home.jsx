@@ -7,6 +7,7 @@ import MoviesGeneric from '../components/Sections/MoviesGeneric'
 import MoviesWithBackground from '../components/Sections/MoviesWithBackground'
 import MoviesByCategory from '../components/Sections/MoviesByCategory'
 import SeriesByCategory from '../components/Sections/SeriesByCategory'
+import Footer from '../components/Footer'
 
 const trendTabs = [
   {
@@ -141,6 +142,8 @@ export default function Home () {
         <SeriesByCategory />
 
       </main>
+
+      <Footer />
     </>
   )
 }

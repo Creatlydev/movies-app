@@ -1,0 +1,35 @@
+.Footer {
+  margin-top: 5rem;
+  background-color: hsl(var(--tmdbDarkBlue));
+  color: hsl(var(--light));
+  display: flex;
+  padding-block: 2rem;
+  text-align: center;
+
+  p {
+    font-size: 1.25rem;
+    font-weight: 500;
+
+    a {
+      transition: color .3s;
+      text-decoration: underline;
+
+      &:hover {
+        color: hsl(var(--primary));
+      }
+    }
+  }
+
+  hr {
+    border: none;
+    outline: none;
+    height: 1px;
+    background-color: hsla(var(--light), .2);
+    margin-block: 2rem;
+  }
+
+  span {
+    font-weight: 500;
+    color: hsla(var(--light), .4);
+  }
+}

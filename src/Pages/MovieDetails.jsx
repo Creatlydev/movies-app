@@ -1,4 +1,5 @@
 import { API_ENDPOINTS } from '../api/endPoints'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import { StarBold } from '../components/Icons'
 import { Link } from '../components/Link'
@@ -41,9 +42,9 @@ export default function MovieDetails ({ routeParams }) {
   }
 
   return (
-    <main>
+    <>
+      <main>
 
-      <>
         <Header />
         <section
           className='HeroBackground'
@@ -140,7 +141,11 @@ export default function MovieDetails ({ routeParams }) {
             />
           </section>
         </div>
-      </>
-    </main>
+      </main>
+
+      <Footer />
+
+    </>
+
   )
 }
