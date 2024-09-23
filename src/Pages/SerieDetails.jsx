@@ -1,4 +1,5 @@
 import { API_ENDPOINTS } from '../api/endPoints'
+import EmptyState from '../components/EmptyState'
 import { StarBold } from '../components/Icons'
 import { Link } from '../components/Link'
 import MoviesWithBackground from '../components/Sections/MoviesWithBackground'
@@ -108,26 +109,28 @@ export default function SerieDetails ({ routeParams }) {
             <h2 className='CreditsTitle'>Reparto de la serie</h2>
             <ul className='CreditsScroller'>
               {
-                cast.map(person => (
-                  <li key={person.id} className='Person'>
-                    <Link to={`/person/${person.id}`}>
-                      <img src={person.profile} alt={person.name} />
-                    </Link>
-                    <div className='PersonInfo'>
-                      <Link
-                        to={`/person/${person.id}`}
-                        className='PersonInfo-link'
-                      >
-                        <h3 className='PersonInfo-name'>
-                          {person.name}
-                        </h3>
+                !cast.length
+                  ? <EmptyState message='No se encontraron atribuciones para esta serie' />
+                  : cast.map(person => (
+                    <li key={person.id} className='Person'>
+                      <Link to={`/person/${person.id}`}>
+                        <img src={person.profile} alt={person.name} />
                       </Link>
-                      <p className='PersonInfo-character'>
-                        {person.character}
-                      </p>
-                    </div>
-                  </li>
-                ))
+                      <div className='PersonInfo'>
+                        <Link
+                          to={`/person/${person.id}`}
+                          className='PersonInfo-link'
+                        >
+                          <h3 className='PersonInfo-name'>
+                            {person.name}
+                          </h3>
+                        </Link>
+                        <p className='PersonInfo-character'>
+                          {person.character}
+                        </p>
+                      </div>
+                    </li>
+                  ))
                   }
             </ul>
           </section>

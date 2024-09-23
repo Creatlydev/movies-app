@@ -1,3 +1,4 @@
+import EmptyState from './EmptyState'
 import Movie from './Movie'
 import './Movies.css'
 
@@ -27,7 +28,7 @@ export default function Movies ({ movies, mediaType, ...props }) {
           mediaType={mediaType}
           {...props}
         />
-      : <p>Not results</p>
+      : <EmptyState />
 
   )
 }
