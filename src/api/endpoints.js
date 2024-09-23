@@ -24,6 +24,8 @@ export const API_ENDPOINTS = {
   TOP_RATED_TV: () => buildUrl('tv/top_rated'),
   SEARCH_TV: (query) => buildUrl('search/tv', { query }),
   TV_DETAILS: (id) => buildUrl(`tv/${id}`, { language: 'en-US' }),
+  TV_SIMILAR: (id) => buildUrl(`tv/${id}/similar`),
+  TV_RECOMMENDATIONS: (id) => buildUrl(`tv/${id}/recommendations`),
   // CREDITS
   TV_CREDITS: (id) => buildUrl(`tv/${id}/credits`),
 
