@@ -73,6 +73,8 @@ img {
   --header-height: 72px;
 
   --shadow-md: 0 0 24px 4px hsla(var(--primary-hue), var(--primary-saturation), 10%, .05);
+
+  --shadow-lg: 0 0 32px 8px hsla(var(--tmdbDarkBlue), .2);
 }
 
 html {

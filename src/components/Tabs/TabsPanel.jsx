@@ -8,7 +8,8 @@ export default function TabsPanel ({ movies, loading, mediaType, sectionType, ..
 
   useEffect(() => {
     let newSkeleton = null
-    if (['trending', 'byType', 'byCategory'].includes(sectionType)) {
+    if (['trending', 'byType', 'byCategory', 'similar']
+      .includes(sectionType)) {
       newSkeleton = <SkeletonSectionGeneric />
     } else {
       newSkeleton = <SkeletonSectionWithBackground />

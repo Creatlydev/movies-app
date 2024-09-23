@@ -5,6 +5,7 @@ import Navbar from './Navbar'
 import FormSearh from './FormSearch'
 import { useHeaderVisibility } from '../hooks/useHeaderVisibility'
 import './Header.css'
+import { Link } from './Link'
 
 export default function Header () {
   const [isSearchVisible, setIsSearchVisible] = useState(false)
@@ -24,9 +25,9 @@ export default function Header () {
           />
 
         </button>
-        <div className='Logo'>
+        <Link to='/' className='Logo'>
           <img src='/src/assets/logo.svg' alt='Logo de the movie db' />
-        </div>
+        </Link>
 
         <Navbar open={isMenuOpen} />
 

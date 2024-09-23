@@ -12,6 +12,10 @@ export const API_ENDPOINTS = {
   TOP_RATED_MOVIES: () => buildUrl('movie/top_rated'),
   SEARCH_MOVIES: (query) => buildUrl('search/movie', { query }),
   MOVIE_DETAILS: (id) => buildUrl(`movie/${id}`),
+  MOVIE_SIMILAR: (id) => buildUrl(`movie/${id}/similar`),
+  MOVIE_RECOMMENDATIONS: (id) => buildUrl(`movie/${id}/recommendations`),
+  // CREDITS
+  MOVIE_CREDITS: (id) => buildUrl(`movie/${id}/credits`),
 
   // TV SERIES
   POPULAR_TV: () => buildUrl('tv/popular'),
@@ -20,6 +24,8 @@ export const API_ENDPOINTS = {
   TOP_RATED_TV: () => buildUrl('tv/top_rated'),
   SEARCH_TV: (query) => buildUrl('search/tv', { query }),
   TV_DETAILS: (id) => buildUrl(`tv/${id}`, { language: 'en-US' }),
+  // CREDITS
+  TV_CREDITS: (id) => buildUrl(`tv/${id}/credits`),
 
   // PERSONS
   POPULAR_PERSON: () => buildUrl('person/popular'),

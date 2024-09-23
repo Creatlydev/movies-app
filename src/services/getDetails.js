@@ -27,7 +27,9 @@ function mappedMovieDetails (details) {
     poster: `${API_ENDPOINTS.BASE_URL_IMAGE}/w300/${details.poster_path}`,
     releaseDate: details.release_date,
     title: details.title || details.name,
-    voterAverage: details.vote_average
+    voteAverage: parseFloat(details.vote_average).toFixed(1),
+    hours: parseInt(details.runtime / 60),
+    minutes: details.runtime % 60
   }
 }
 
@@ -43,6 +45,6 @@ function mappedSerieDetails (details) {
     poster: `${API_ENDPOINTS.BASE_URL_IMAGE}/w300/${details.poster_path}`,
     releaseDate: details.release_date,
     title: details.name,
-    voterAverage: details.vote_average
+    voteAverage: parseFloat(details.vote_average).toFixed(1)
   }
 }

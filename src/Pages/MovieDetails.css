@@ -1,0 +1,219 @@
+.HeroBackground {
+  width: 100%;
+  min-height: 500px;
+  background: linear-gradient(to bottom,
+      hsl(var(--tmdbDarkBlue)),
+      hsl(var(--tmdbDarkBlue), .7)), var(--bg-image);
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: hsl(var(--light));
+  display: flex;
+  align-items: center;
+  padding-block: 1.5rem;
+  background-attachment: fixed;
+
+  .Info {
+    .InfoDetails {
+      display: flex;
+      margin-top: 1rem;
+      align-items: center;
+      gap: 1rem;
+
+      .InfoDetails-avaiable {
+        color: hsl(var(--light), .6);
+        padding: .5rem .25rem;
+        border: 1px solid;
+        border-radius: .25rem;
+        font-weight: 500;
+      }
+
+      .InfoDetails-avaiable.adult {
+        color: rgb(192, 9, 9);
+      }
+
+      .MoviesScroller-userScore {
+        line-height: 1;
+        position: relative;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background-color: hsl(var(--dark));
+        color: hsl(var(--light));
+        outline: 2px solid hsl(var(--primary));
+        outline-offset: -4px;
+        cursor: default;
+        transition: scale .3s;
+        font-weight: 500;
+        font-size: .875rem;
+
+        .icon {
+          position: absolute;
+          right: 4px;
+          top: -8px;
+          color: yellow;
+        }
+
+        &:hover {
+          scale: 1.1;
+
+          .icon {
+            filter: drop-shadow(0 0 4px yellow);
+          }
+        }
+      }
+    }
+
+    .InfoTitle {
+      font-size: clamp(1.5rem, 10vw, 4rem);
+      font-weight: 700;
+      margin-block: .75rem;
+      line-height: 1;
+    }
+
+    .InfoYear {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: hsl(var(--light), .6);
+    }
+
+    .InfoGroup {
+      display: flex;
+      gap: .75rem 2rem;
+      flex-wrap: wrap;
+      align-items: center;
+      line-height: 1;
+      font-size: clamp(.875rem, 5vw, 1rem);
+    }
+
+    .InfoRuntime {
+      color: hsl(var(--light), .6);
+      font-weight: 500;
+    }
+
+    .InfoGenres {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+
+      .InfoGenreLink {
+        text-wrap: nowrap;
+        padding: .25rem;
+        font-weight: 400;
+
+        transition: color .3s;
+
+        &:hover {
+          color: hsl(var(--primary));
+        }
+      }
+    }
+  }
+
+  .Description {
+    margin-top: 2rem;
+    line-height: 1.5;
+    text-wrap: balance;
+  }
+
+  .DescriptionPoster {
+    display: none;
+  }
+}
+
+
+@media screen and (width > 800px) {
+  .HeroBackground {
+    padding: 0;
+
+    .container {
+      padding-block: 1.5rem;
+      position: relative;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      gap: 2.5rem;
+
+      .Description>p {
+        max-width: 600px;
+      }
+
+      .DescriptionPoster {
+        display: block;
+        width: 300px;
+        border-radius: 16px;
+        box-shadow: var(--shadow-lg);
+      }
+    }
+  }
+}
+
+
+
+
+
+/* CREDITS SCROLLER */
+.CreditsTitle {
+  font-size: clamp(1.25rem, 5vw, 2rem);
+  margin-top: 2.5rem;
+  font-weight: 500;
+}
+
+.CreditsScroller {
+  display: flex;
+  gap: 1rem;
+  padding-block: 1.5rem;
+  scroll-snap-type: inline mandatory;
+  overflow: hidden;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  .Person {
+    width: 180px;
+    background-color: hsl(var(--white));
+    box-shadow: var(--shadow-md);
+    flex-shrink: 0;
+    border-radius: .5rem;
+    overflow: hidden;
+
+    a {
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: 180px;
+      }
+    }
+
+
+    .PersonInfo {
+      padding: .5rem;
+
+      .PersonInfo-link {
+        transition: color .3s;
+
+        &:hover {
+          color: hsl(var(--primary));
+        }
+      }
+
+      .PersonInfo-name {
+        font-weight: 500;
+        margin-bottom: .25rem;
+      }
+
+      .PersonInfo-character {
+        font-size: .875rem;
+        color: hsla(var(--dark), .8);
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.CreditsScroller::-webkit-scrollbar {
+  display: none;
+}
