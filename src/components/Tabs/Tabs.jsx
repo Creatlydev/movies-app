@@ -13,8 +13,9 @@ export default function Tabs ({ tabs, title, contentType, mediaType, ...props })
   const { movies, getMovies, loading } = useMovies()
 
   const handleClick = (index, endpoint) => {
-    setActiveTab(index)
+    if (activeTab === index) return
 
+    setActiveTab(index)
     const setMoviesToActiveTab = async () => {
       await getMovies(endpoint)
     }
