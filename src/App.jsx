@@ -9,6 +9,8 @@ import './App.css'
 const LazyMovieDetails = lazy(() => import('./Pages/MovieDetails'))
 const LazySerieDetails = lazy(() => import('./Pages/SerieDetails'))
 const LazyPersonDetails = lazy(() => import('./Pages/PersonDetails'))
+const LazyUpcomingMovies = lazy(() => import('./Pages/UpcomingMoviesPage'))
+const LazyTopRatedMovies = lazy(() => import('./Pages/TopRatedMovies'))
 
 const routes = [
   {
@@ -21,11 +23,11 @@ const routes = [
   },
   {
     path: '/movie/upcoming',
-    Component: () => <main>UPCOMING</main>
+    Component: LazyUpcomingMovies
   },
   {
     path: '/movie/top-rated',
-    Component: () => <main>TOP_RATED</main>
+    Component: LazyTopRatedMovies
   },
   {
     path: '/search/:query',
