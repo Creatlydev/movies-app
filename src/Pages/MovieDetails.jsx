@@ -112,12 +112,12 @@ export default function MovieDetails ({ routeParams }) {
                   ? <EmptyState message='No se encontraron atribuciones para esta pelicula' />
                   : cast.map(person => (
                     <li key={person.id} className='Person'>
-                      <Link to={`/person/${person.id}`}>
+                      <Link to={`/person/${person.id}-${encodeURIComponent(person.name)}`}>
                         <img src={person.profile} alt={person.name} />
                       </Link>
                       <div className='PersonInfo'>
                         <Link
-                          to={`/person/${person.id}`}
+                          to={`/person/${person.id}-${encodeURIComponent(person.name)}`}
                           className='PersonInfo-link'
                         >
                           <h3 className='PersonInfo-name'>

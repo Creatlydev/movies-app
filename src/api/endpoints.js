@@ -32,6 +32,7 @@ export const API_ENDPOINTS = {
   // PERSONS
   POPULAR_PERSON: () => buildUrl('person/popular'),
   SEARCH_PERSON: (query) => buildUrl('search/person', { query }),
+  DETAILS_PERSON: (id) => buildUrl(`person/${id}`, { language: 'en-US' }),
 
   // MULTIPLE SEARCH (MOVIES, TV, and PEOPLE)
   SEARCH_MULTI: (query) => buildUrl('search/multi', { query }),

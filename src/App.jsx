@@ -8,6 +8,7 @@ import './App.css'
 
 const LazyMovieDetails = lazy(() => import('./Pages/MovieDetails'))
 const LazySerieDetails = lazy(() => import('./Pages/SerieDetails'))
+const LazyPersonDetails = lazy(() => import('./Pages/PersonDetails'))
 
 const routes = [
   {
@@ -17,6 +18,14 @@ const routes = [
   {
     path: '/movie/now-playing',
     Component: () => <main>NOW PLAYING</main>
+  },
+  {
+    path: '/movie/upcoming',
+    Component: () => <main>UPCOMING</main>
+  },
+  {
+    path: '/movie/top-rated',
+    Component: () => <main>TOP_RATED</main>
   },
   {
     path: '/search/:query',
@@ -29,6 +38,10 @@ const routes = [
   {
     path: '/tv/:query',
     Component: LazySerieDetails
+  },
+  {
+    path: '/person/:query',
+    Component: LazyPersonDetails
   }
 ]
 

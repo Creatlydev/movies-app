@@ -1,0 +1,86 @@
+.DetailsPerson {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-block: 3rem 1.5rem;
+
+  .Profile {
+    width: min(100%, 300px);
+    margin-inline: auto;
+
+    >img {
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    >figcaption {
+      font-style: italic;
+      font-style: italic;
+      font-size: .875rem;
+      color: hsla(var(--dark), .8);
+    }
+  }
+
+  .Biography {
+    >h1 {
+      font-size: clamp(1.5rem, 10vw, 2.5rem);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+
+    >p {
+      line-height: 1.5;
+    }
+  }
+
+  .DetailsData {
+    >h2 {
+      font-weight: 500;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    dt {
+      font-weight: 400;
+    }
+
+    dd {
+      margin-block: .25rem 1rem
+    }
+  }
+}
+
+
+@media screen and (width > 670px) {
+  .DetailsPerson {
+    grid-template-columns: 300px 1fr;
+
+    .Profile {
+      margin: 0;
+    }
+
+    .DetailsData {
+      grid-row-start: 1;
+      grid-column-start: 2;
+    }
+
+    .Biography {
+      grid-column: span 2;
+    }
+  }
+}
+
+@media screen and (width > 1024px) {
+  .DetailsPerson {
+    .DetailsData {
+      grid-row-start: 2;
+      grid-column-start: 1;
+    }
+
+    .Biography {
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+  }
+}
