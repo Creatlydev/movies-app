@@ -9,7 +9,7 @@ export default function PersonDetails ({ routeParams }) {
   const { loading, personDetails, personMovieCredits } = usePersonDetails({ id })
 
   if (loading) {
-    return <main>Cargando Detalles de Persona</main>
+    return <main style={{ height: '100vh' }} />
   }
 
   const {

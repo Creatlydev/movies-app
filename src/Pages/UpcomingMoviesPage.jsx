@@ -11,7 +11,7 @@ export default function UpcomingMoviesPage () {
   }, [])
 
   if (loading) {
-    <main style={{ width: '60vh' }} />
+    <main style={{ height: '100vh' }} />
   }
 
   return (

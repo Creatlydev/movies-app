@@ -4,10 +4,10 @@ import { useMovies } from '../hooks/useMovies'
 import { API_ENDPOINTS } from '../api/endPoints'
 import './GridPage.css'
 
-export default function TopRatedMovies () {
+export default function NowPlayingMovies () {
   const { movies, getMovies, loading } = useMovies()
   useEffect(() => {
-    getMovies(API_ENDPOINTS.TOP_RATED_MOVIES())
+    getMovies(API_ENDPOINTS.NOW_PLAYING_MOVIES())
   }, [])
 
   if (loading) {
@@ -17,7 +17,7 @@ export default function TopRatedMovies () {
   return (
     <main>
       <div className='container'>
-        <h1>Mejor valoradas</h1>
+        <h1>En cartelera</h1>
         <Grid
           data={movies} mediaType='movie'
         />

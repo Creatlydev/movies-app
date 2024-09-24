@@ -11,6 +11,13 @@ const LazySerieDetails = lazy(() => import('./Pages/SerieDetails'))
 const LazyPersonDetails = lazy(() => import('./Pages/PersonDetails'))
 const LazyUpcomingMovies = lazy(() => import('./Pages/UpcomingMoviesPage'))
 const LazyTopRatedMovies = lazy(() => import('./Pages/TopRatedMovies'))
+const LazyNowPlaying = lazy(() => import('./Pages/NowPlayingMovies'))
+const LazyPopularMovies = lazy(() => import('./Pages/PopularMovies'))
+
+const LazyAiringTodaySeries = lazy(() => import('./Pages/AiringTodaySeries'))
+const LazyOnTheAirSeries = lazy(() => import('./Pages/OnTheAirSeries'))
+const LazyTopRatedSeries = lazy(() => import('./Pages/TopRatedSeries'))
+const LazyPopularSeries = lazy(() => import('./Pages/TopRatedSeries'))
 
 const routes = [
   {
@@ -18,8 +25,12 @@ const routes = [
     Component: Home
   },
   {
+    path: '/movie/popular',
+    Component: LazyPopularMovies
+  },
+  {
     path: '/movie/now-playing',
-    Component: () => <main>NOW PLAYING</main>
+    Component: LazyNowPlaying
   },
   {
     path: '/movie/upcoming',
@@ -28,6 +39,22 @@ const routes = [
   {
     path: '/movie/top-rated',
     Component: LazyTopRatedMovies
+  },
+  {
+    path: '/tv/airing-today',
+    Component: LazyAiringTodaySeries
+  },
+  {
+    path: '/tv/on-the-air',
+    Component: LazyOnTheAirSeries
+  },
+  {
+    path: '/tv/top-rated',
+    Component: LazyTopRatedSeries
+  },
+  {
+    path: '/tv/popular',
+    Component: LazyPopularSeries
   },
   {
     path: '/search/:query',

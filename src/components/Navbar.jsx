@@ -15,7 +15,7 @@ export default function Navbar ({ open }) {
         <NavigationMenuDropdown>
           <ul className='NavbarMenu' role='menu'>
             <li>
-              <Link className='NavbarMenu-item' to='/movie' role='menuitem'>Popular</Link>
+              <Link className='NavbarMenu-item' to='/movie/popular' role='menuitem'>Popular</Link>
             </li>
             <li>
               <Link className='NavbarMenu-item' to='/movie/now-playing' role='menuitem'>En Cartelera</Link>
@@ -37,29 +37,16 @@ export default function Navbar ({ open }) {
         <NavigationMenuDropdown>
           <ul className='NavbarMenu' role='menu'>
             <li>
-              <Link className='NavbarMenu-item' to='/tv' role='menuitem'>Popular</Link>
+              <Link className='NavbarMenu-item' to='/tv/popular' role='menuitem'>Popular</Link>
             </li>
             <li>
-              <Link className='NavbarMenu-item' to='/tv/...' role='menuitem'>Se emiten hoy</Link>
+              <Link className='NavbarMenu-item' to='/tv/airing-today' role='menuitem'>Se emiten hoy</Link>
             </li>
             <li>
-              <Link className='NavbarMenu-item' to='/tv/...' role='menuitem'>En television</Link>
+              <Link className='NavbarMenu-item' to='/tv/on-the-air' role='menuitem'>En television</Link>
             </li>
             <li>
               <Link className='NavbarMenu-item' to='/tv/top-rated' role='menuitem'>Mejor valoradas</Link>
-            </li>
-          </ul>
-        </NavigationMenuDropdown>
-      </NavigationMenuItem>
-
-      <NavigationMenuItem>
-        <NavigationMenuTrigger>
-          Gente
-        </NavigationMenuTrigger>
-        <NavigationMenuDropdown>
-          <ul className='NavbarMenu' role='menu'>
-            <li>
-              <Link className='NavbarMenu-item' to='/person' role='menuitem'>Popular</Link>
             </li>
           </ul>
         </NavigationMenuDropdown>
