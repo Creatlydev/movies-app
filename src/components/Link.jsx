@@ -1,14 +1,7 @@
 import { flushSync } from 'react-dom'
 
-import { BUTTONS, EVENTS } from '../consts'
-
-function navigate (href) {
-  window.history.pushState({}, '', href)
-
-  // crear un evento personalizado
-  const navigationEvent = new Event(EVENTS.PUSHSTATE)
-  window.dispatchEvent(navigationEvent)
-}
+import { BUTTONS } from '../consts'
+import { navigate } from '../utils/navigate'
 
 export function Link ({ target, to, ...props }) {
   const handleClick = (event) => {
