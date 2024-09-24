@@ -67,8 +67,23 @@
 
     .Biography {
       grid-column: span 2;
+
+      > span {
+        display: inline-block;
+        font-weight: 500;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
     }
   }
+}
+
+hr {
+  border: none;
+  height: 1px;
+  outline: none;
+  background-color: hsla(var(--dark), .2);
+  margin-block: 2.5rem;
 }
 
 @media screen and (width > 1024px) {
@@ -79,6 +94,7 @@
     }
 
     .Biography {
+      overflow: hidden;
       grid-column: span 1;
       grid-row: span 2;
     }

@@ -1,3 +1,4 @@
+import Movies from '../components/Movies'
 import { usePersonDetails } from '../hooks/usePersonDetails'
 import { getIdFromQuery } from '../utils/getIdFromQuery'
 import './PersonDetails.css'
@@ -5,7 +6,7 @@ import './PersonDetails.css'
 export default function PersonDetails ({ routeParams }) {
   const { query } = routeParams
   const id = getIdFromQuery({ query, sep: '-' })
-  const { loading, personDetails } = usePersonDetails({ id })
+  const { loading, personDetails, personMovieCredits } = usePersonDetails({ id })
 
   if (loading) {
     return <main>Cargando Detalles de Persona</main>
@@ -35,6 +36,9 @@ export default function PersonDetails ({ routeParams }) {
             <p>
               {biography || 'Biografia no disponible'}
             </p>
+            <hr />
+            <span>Conocido por</span>
+            <Movies movies={personMovieCredits} mediaType='movie' />
           </div>
 
           <aside
