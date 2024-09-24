@@ -70,7 +70,7 @@ export default function SerieDetails ({ routeParams }) {
                             <Link
                               key={genre.id}
                               className='InfoGenreLink'
-                              to={`categories/${genre.id}-${genre.name}`}
+                              to={`category/${genre.id}-${genre.name}`}
                             >
                               {genre.name}
                             </Link>

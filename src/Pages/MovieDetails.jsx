@@ -69,7 +69,7 @@ export default function MovieDetails ({ routeParams }) {
                             <Link
                               key={genre.id}
                               className='InfoGenreLink'
-                              to={`categories/${genre.id}-${genre.name}`}
+                              to={`/movie/category/${genre.id}-${genre.name}`}
                             >
                               {genre.name}
                             </Link>

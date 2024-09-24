@@ -18,6 +18,8 @@ const LazyAiringTodaySeries = lazy(() => import('./Pages/AiringTodaySeries'))
 const LazyOnTheAirSeries = lazy(() => import('./Pages/OnTheAirSeries'))
 const LazyTopRatedSeries = lazy(() => import('./Pages/TopRatedSeries'))
 const LazyPopularSeries = lazy(() => import('./Pages/TopRatedSeries'))
+const LazyCategoryMovies = lazy(() => import('./Pages/CategoryMovies'))
+const LazyCategorySeries = lazy(() => import('./Pages/CategorySeries'))
 
 const routes = [
   {
@@ -71,6 +73,14 @@ const routes = [
   {
     path: '/person/:query',
     Component: LazyPersonDetails
+  },
+  {
+    path: '/movie/category/:query',
+    Component: LazyCategoryMovies
+  },
+  {
+    path: '/tv/category/:query',
+    Component: LazyCategorySeries
   }
 ]
 
