@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './Pages/Home'
 import './App.css'
+import NotFound from './Pages/NotFound'
 
 const LazyMovieDetails = lazy(() => import('./Pages/MovieDetails'))
 const LazySerieDetails = lazy(() => import('./Pages/SerieDetails'))
@@ -90,7 +91,10 @@ function App () {
       <Suspense fallback={null}>
         <Header />
         <div className='overlay' />
-        <Router routes={routes} />
+        <Router
+          routes={routes}
+          defaultComponent={NotFound}
+        />
         <Footer />
       </Suspense>
     </div>
