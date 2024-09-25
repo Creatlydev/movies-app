@@ -6,6 +6,7 @@ import FormSearh from './FormSearch'
 import { useHeaderVisibility } from '../hooks/useHeaderVisibility'
 import './Header.css'
 import { Link } from './Link'
+import logoImg from '../assets/logo.svg'
 
 export default function Header () {
   const [isSearchVisible, setIsSearchVisible] = useState(false)
@@ -26,7 +27,7 @@ export default function Header () {
 
         </button>
         <Link to='/' className='Logo'>
-          <img src='/src/assets/logo.svg' alt='Logo de the movie db' />
+          <img src={logoImg} alt='Logo de the movie db' />
         </Link>
 
         <Navbar open={isMenuOpen} />
