@@ -7,21 +7,23 @@ export function useSearch () {
 
   useEffect(() => {
     if (isFirstInput.current) {
-      isFirstInput.current = search === ''
+      isFirstInput.current = false
       return
     }
 
-    if (search === '') {
+    const newSearch = search.trim()
+
+    if (newSearch === '') {
       setError('No se puede buscar una pelicula vacia')
       return
     }
 
-    if (search.match(/^\d+$/)) {
+    if (newSearch.match(/^\d+$/)) {
       setError('No se puede buscar una pelicula con un numero')
       return
     }
 
-    if (search.length < 3) {
+    if (newSearch.length < 3) {
       setError('La busqueda debe de tener al menos 3 caracteres')
       return
     }
@@ -29,5 +31,5 @@ export function useSearch () {
     setError(null)
   }, [search])
 
-  return { search, updateSearch, error }
+  return { search, updateSearch, error, setError }
 }

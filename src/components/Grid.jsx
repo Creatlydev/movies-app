@@ -10,7 +10,7 @@ export default function Grid ({ data, mediaType }) {
           <Movie
             key={movie.id}
             movie={movie}
-            mediaType={mediaType}
+            mediaType={mediaType || movie.mediaType}
           />
         ))
       }

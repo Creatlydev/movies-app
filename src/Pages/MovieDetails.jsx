@@ -2,6 +2,7 @@ import { API_ENDPOINTS } from '../api/endPoints'
 import EmptyState from '../components/EmptyState'
 import { StarBold } from '../components/Icons'
 import { Link } from '../components/Link'
+import Person from '../components/Person'
 import MoviesWithBackground from '../components/Sections/MoviesWithBackground'
 import SkeletonDetails from '../components/skeleton/SkeletonDetails'
 import { useDetails } from '../hooks/useDetails'
@@ -111,24 +112,7 @@ export default function MovieDetails ({ routeParams }) {
                 !cast.length
                   ? <EmptyState message='No se encontraron atribuciones para esta pelicula' />
                   : cast.map(person => (
-                    <li key={person.id} className='Person'>
-                      <Link to={`/person/${person.id}-${encodeURIComponent(person.name)}`}>
-                        <img src={person.profile} alt={person.name} />
-                      </Link>
-                      <div className='PersonInfo'>
-                        <Link
-                          to={`/person/${person.id}-${encodeURIComponent(person.name)}`}
-                          className='PersonInfo-link'
-                        >
-                          <h3 className='PersonInfo-name'>
-                            {person.name}
-                          </h3>
-                        </Link>
-                        <p className='PersonInfo-character'>
-                          {person.character}
-                        </p>
-                      </div>
-                    </li>
+                    <Person key={person.id} person={person} />
                   ))
                   }
             </ul>

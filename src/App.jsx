@@ -22,6 +22,8 @@ const LazyPopularSeries = lazy(() => import('./Pages/TopRatedSeries'))
 const LazyCategoryMovies = lazy(() => import('./Pages/CategoryMovies'))
 const LazyCategorySeries = lazy(() => import('./Pages/CategorySeries'))
 
+const LazySearchPage = lazy(() => import('./Pages/SearchPage'))
+
 const routes = [
   {
     path: '/',
@@ -61,7 +63,7 @@ const routes = [
   },
   {
     path: '/search/:query',
-    Component: ({ routeParams }) => <main>Resultados de {routeParams.query}</main>
+    Component: LazySearchPage
   },
   {
     path: '/movie/:query',

@@ -1,0 +1,40 @@
+.SearchResults {
+  margin-top: 5rem;
+
+  .MoviesScroller-Movie {
+    height: 340px;
+  }
+
+  .Person {
+    border-radius: .5rem;
+    background-color: hsl(var(--white));
+    box-shadow: var(--shadow-md);
+    height: 340px;
+
+    a {
+      width: 100%;
+      height: 225px;
+      
+      img {
+        border-radius: .5rem;
+        height: 100%;
+      }
+    }
+
+    .PersonInfo {
+      padding: .5rem;
+      font-weight: 500;
+    }
+  }
+
+  .SearchInfo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    align-items: center;
+    font-weight: 500;
+    color: hsla(var(--dark), .8);
+    font-size: 1.25rem;
+    gap: 1.5rem;
+  }
+}

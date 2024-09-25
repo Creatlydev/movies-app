@@ -41,7 +41,7 @@ export default function Header () {
       </div>
 
       <div className={`SearchBar ${isSearchVisible ? 'is-visible' : 'is-hidden'}`}>
-        <FormSearh />
+        <FormSearh setIsSearchVisible={setIsSearchVisible} />
       </div>
     </header>
   )
