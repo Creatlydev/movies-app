@@ -9,6 +9,7 @@ import { useDetails } from '../hooks/useDetails'
 import { getIdFromQuery } from '../utils/getIdFromQuery'
 
 import './MovieDetails.css'
+import NotFound from './NotFound'
 
 function similarSeries (id) {
   const tabs = [
@@ -32,9 +33,6 @@ export default function SerieDetails ({ routeParams }) {
   const query = routeParams.query
   const id = getIdFromQuery({ query, sep: '-' })
   const { loading, details, cast } = useDetails({ mediaType: 'tv', id })
-  const year = details?.releaseDate?.split('-')[0]
-  let runtime = details.hours ? `${details.hours}h ` : ''
-  runtime += details.minutes ? `${details.minutes}m`.padStart(2, '0') : ''
 
   const tabs = similarSeries(id)
 
@@ -43,6 +41,12 @@ export default function SerieDetails ({ routeParams }) {
       <SkeletonDetails />
     )
   }
+
+  if (!details || !cast) return <NotFound />
+
+  const year = details?.releaseDate?.split('-')[0]
+  let runtime = details.hours ? `${details.hours}h ` : ''
+  runtime += details.minutes ? `${details.minutes}m`.padStart(2, '0') : ''
 
   return (
     <>

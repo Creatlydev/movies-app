@@ -7,7 +7,7 @@ export async function getDetails (mediaType, id) {
       ? 'MOVIE_DETAILS'
       : 'TV_DETAILS'](id)
   const details = await fetchFromApi(url)
-
+  if (!details) return null
   const mappedDetails = mediaType === 'movie'
     ? mappedMovieDetails(details)
     : mappedSerieDetails(details)

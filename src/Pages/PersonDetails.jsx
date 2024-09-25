@@ -1,6 +1,7 @@
 import Movies from '../components/Movies'
 import { usePersonDetails } from '../hooks/usePersonDetails'
 import { getIdFromQuery } from '../utils/getIdFromQuery'
+import NotFound from './NotFound'
 import './PersonDetails.css'
 
 export default function PersonDetails ({ routeParams }) {
@@ -11,6 +12,8 @@ export default function PersonDetails ({ routeParams }) {
   if (loading) {
     return <main style={{ height: '100vh' }} />
   }
+
+  if (!personDetails || !personMovieCredits) return <NotFound />
 
   const {
     name,

@@ -6,7 +6,10 @@ export async function getCreditsCast (mediaType, id) {
     mediaType === 'movie'
       ? 'MOVIE_CREDITS'
       : 'TV_CREDITS'](id)
-  const { cast } = await fetchFromApi(url)
+  const response = await fetchFromApi(url)
+
+  if (!response) return undefined
+  const { cast } = response
 
   const filterCast = cast.filter(person => person.profile_path)
 

@@ -3,7 +3,11 @@ import { fetchFromApi } from '../api/utils'
 
 export async function getPersonMovieCredits (id) {
   const url = API_ENDPOINTS.PERSON_MOVIE_CREDITS(id)
-  const { cast } = await fetchFromApi(url)
+  const response = await fetchFromApi(url)
+
+  if (!response) return undefined
+
+  const { cast } = response
 
   const filterCast = cast.filter(movie => movie.poster_path)
 
