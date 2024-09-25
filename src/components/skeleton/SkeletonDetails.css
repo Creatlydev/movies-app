@@ -11,12 +11,14 @@
     aspect-ratio: 2/3;
     border-radius: 16px;
     display: none;
+    flex-shrink: 0;
   }
 
   .details {
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    flex: 1;
 
     .year {
       width: 50px;
@@ -39,7 +41,7 @@
 
     .description {
       height: 150px;
-      width: 500px;
+      width: min(100%, 500px);
       border-radius: 1rem;
     }
   }

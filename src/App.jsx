@@ -91,8 +91,8 @@ function App () {
   return (
     <div className='main-wrapper'>
       <Suspense fallback={null}>
-        <Header />
         <div className='overlay' />
+        <Header />
         <Router
           routes={routes}
           defaultComponent={NotFound}
