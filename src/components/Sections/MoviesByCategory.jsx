@@ -17,7 +17,7 @@ export default function MoviesByCategory () {
       <div className='container'>
         {
         loading
-          ? <p>Cargando...</p>
+          ? null
           : <Tabs
               tabs={moviesCategories}
               title='Peliculas en la categoria'
