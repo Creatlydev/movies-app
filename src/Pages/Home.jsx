@@ -1,4 +1,4 @@
-import { API_ENDPOINTS } from '../api/endPoints'
+import { API_ENDPOINTS } from '../api/endpoints'
 import FormSearh from '../components/FormSearch'
 import { useRandomMovieImage } from '../hooks/useRandomMovieImage'
 import './Home.css'

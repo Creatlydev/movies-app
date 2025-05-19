@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import Grid from '../components/Grid'
 import { useMovies } from '../hooks/useMovies'
-import { API_ENDPOINTS } from '../api/endPoints'
+import { API_ENDPOINTS } from '../api/endpoints'
 import './GridPage.css'
 
 export default function OnTheAirSeries () {

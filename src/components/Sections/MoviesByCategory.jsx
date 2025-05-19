@@ -1,6 +1,6 @@
 // import { useEffect } from 'react'
 
-import { API_ENDPOINTS } from '../../api/endPoints'
+import { API_ENDPOINTS } from '../../api/endpoints'
 import { useCategories } from '../../hooks/useCategories'
 import Tabs from '../Tabs/Tabs'
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { API_ENDPOINTS } from '../api/endPoints'
+import { API_ENDPOINTS } from '../api/endpoints'
 import { getRandomImages } from '../services/movies'
 
 export function useRandomMovieImage () {

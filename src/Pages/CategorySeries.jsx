@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-import { API_ENDPOINTS } from '../api/endPoints'
+import { API_ENDPOINTS } from '../api/endpoints'
 import { useMovies } from '../hooks/useMovies'
 import { getIdFromQuery } from '../utils/getIdFromQuery'
 import Grid from '../components/Grid'

@@ -1,4 +1,4 @@
-import { API_ENDPOINTS } from '../api/endPoints'
+import { API_ENDPOINTS } from '../api/endpoints'
 import EmptyState from '../components/EmptyState'
 import { StarBold } from '../components/Icons'
 import { Link } from '../components/Link'
